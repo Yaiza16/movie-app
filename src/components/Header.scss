@@ -26,13 +26,13 @@
   padding: 0 3rem;
 
   &__item {
-    font-weight: 700;
+    font-weight: 300;
     font-size: 1.2rem;
     font-family: v.$f-secundary;
   }
 
   &__link {
-    color: v.$c-gray;
+    color: v.$c-white;
     text-decoration: none;
   }
 }

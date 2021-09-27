@@ -1,5 +1,6 @@
 import React from 'react';
 import IconMovie from '../helpers/Icons';
+import Form from './Form';
 import './Header.scss';
 
 const Header = () => {
@@ -21,6 +22,7 @@ const Header = () => {
           </a>
         </li>
       </ul>
+      <Form />
     </header>
   );
 };
