@@ -1,0 +1,12 @@
+@use 'variables' as v;
+
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;500;700&display=swap');
+
+body {
+  font-family: v.$f-primary;
+}
+
+p {
+  font-family: v.$f-secundary;
+}

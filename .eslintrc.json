@@ -20,7 +20,12 @@
   },
   "plugins": ["react", "react-hooks", "prettier"],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "react/prop-types": "off",
     "no-plusplus": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
