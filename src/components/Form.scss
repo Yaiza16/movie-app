@@ -43,23 +43,34 @@
       border-color: v.$c-white;
     }
 
-    & ~ .icon-container {
+    & ~ .icon-container--search {
       right: unset;
-      // left: 0;
       animation: moveSearch 0.5s normal forwards;
-      // pointer-events: none;
+      pointer-events: none;
+    }
+
+    & ~ .icon-container--close {
+      display: inline;
+      right: 0;
     }
   }
 }
 
 .icon-container {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
   background-color: transparent;
   border: none;
   cursor: pointer;
+  top: 0;
+  bottom: 0;
+
+  &--search {
+    right: 0;
+  }
+
+  &--close {
+    display: none;
+  }
 }
 
 @keyframes widthMax {

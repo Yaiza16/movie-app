@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Form.scss';
-import { IconSearch } from '../helpers/Icons';
+import { IconClose, IconSearch } from '../helpers/Icons';
 
 const Form = () => {
   const [expandedForm, setExpandedForm] = useState(false);
@@ -24,8 +24,20 @@ const Form = () => {
           autoComplete="off"
         />
 
-        <button className="icon-container" type="button" onClick={handleForm}>
+        <button
+          className="icon-container icon-container--search"
+          type="button"
+          onClick={handleForm}
+        >
           <IconSearch />
+        </button>
+
+        <button
+          className="icon-container icon-container--close"
+          type="button"
+          onClick={handleForm}
+        >
+          <IconClose />
         </button>
       </div>
     </form>
