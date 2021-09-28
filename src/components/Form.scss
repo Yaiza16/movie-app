@@ -71,6 +71,10 @@
   &--close {
     display: none;
   }
+
+  &:hover {
+    fill: v.$c-red;
+  }
 }
 
 @keyframes widthMax {

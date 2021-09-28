@@ -1,13 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Form.scss';
+import { useHistory } from 'react-router-dom';
 import { IconClose, IconSearch } from '../helpers/Icons';
 
 const Form = () => {
   const [expandedForm, setExpandedForm] = useState(false);
+  const history = useHistory();
+
+  useEffect(() => {
+    if (expandedForm) {
+      history.push('/search');
+    } else {
+      history.push('/');
+    }
+  }, [expandedForm, history]);
 
   const handleForm = () => {
     setExpandedForm((value) => !value);
-    // Create ref for focus input
   };
 
   return (

@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.scss';
-import MainPage from './pages/MainPage';
+import AppRouter from './routers/AppRouter';
 
 function App() {
   return (
     <div className="app">
-      <MainPage />
+      <AppRouter />
     </div>
   );
 }
