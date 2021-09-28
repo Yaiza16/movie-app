@@ -29,14 +29,33 @@
     font-weight: 300;
     font-size: 1.2rem;
     font-family: v.$f-secundary;
-
-    :hover {
-      color: v.$c-red;
-    }
+    position: relative;
   }
 
   &__link {
     color: v.$c-white;
     text-decoration: none;
+    transition: color 0.3s linear;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      border-radius: 0.2rem;
+      background-color: v.$c-red;
+      width: 100%;
+      bottom: -0.5rem;
+      display: block;
+      transform: rotateY(90deg);
+      transition: transform 0.2s linear;
+    }
+
+    &:hover {
+      color: v.$c-red;
+
+      &::after {
+        transform: rotateY(0deg);
+      }
+    }
   }
 }
