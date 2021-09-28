@@ -3,7 +3,7 @@
 .form-search {
   display: flex;
   align-items: center;
-  width: 15rem;
+  width: 100%;
 }
 
 .input-container {
@@ -23,13 +23,15 @@
   height: 90%;
   right: 0;
   outline: none;
-  //   right: 0;
+  font-family: v.$f-secundary;
+  font-size: 1.2rem;
+  // Add font-family
+  //Do font-size bigger
 
   &--opened {
-    // width: 100%;
     border: 1px solid v.$c-gray;
     border-radius: 1rem;
-    padding-left: 0.5rem;
+    padding-left: 2.5rem;
     padding-right: 2rem;
     color: v.$c-white;
     right: 0;
@@ -39,6 +41,13 @@
     &:focus {
       outline: none;
       border-color: v.$c-white;
+    }
+
+    & ~ .icon-container {
+      right: unset;
+      // left: 0;
+      animation: moveSearch 0.5s normal forwards;
+      // pointer-events: none;
     }
   }
 }
@@ -60,5 +69,14 @@
   }
   100% {
     width: 100%;
+  }
+}
+
+@keyframes moveSearch {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: calc(100% - 34px);
   }
 }
