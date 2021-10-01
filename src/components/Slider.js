@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import Card from './Card';
 import './Slider.scss';
 
@@ -20,11 +21,11 @@ const Slider = ({ title, fetchUrl }) => {
   return (
     <div>
       <h2>{title}</h2>
-      <div className="movies-container">
+      <Swiper className="movies-container">
         {movies.map((movie) => (
           <Card movie={movie} key={movie.id} />
         ))}
-      </div>
+      </Swiper>
     </div>
   );
 };
