@@ -1,36 +1,60 @@
 @use '../styles/variables' as v;
+
+.title-slider {
+  margin-left: v.$p-general;
+}
+
 .section-slider {
   position: relative;
 }
 
 .movies-container {
   display: flex;
-  // gap: 1rem;
   overflow-x: hidden;
   width: 100%;
+  gap: 1rem;
+
+  &:hover .arrow-slider {
+    opacity: 1;
+  }
+
+  & > .swiper-wrapper > .swiper-slide:first-child {
+    margin-left: v.$p-general;
+  }
 }
 
 .swiper-slide {
   width: 200px;
   height: 300px;
+
+  // &:first-child {
+  //   padding-left: v.$p-general;
+  // }
 }
 
-.custom_prev {
+.arrow-slider {
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 3.5rem;
   top: 0;
-  left: 0;
-  background-color: red;
-  z-index: 2;
-}
-
-.custom_next {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  left: 0;
   bottom: 0;
-  background-color: red;
+  background-color: rgba(v.$c-black, 0.65);
   z-index: 2;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in;
+
+  &--right {
+    right: 0;
+  }
+
+  &--disabled {
+    display: none;
+  }
+
+  &:hover {
+    background-color: rgba(v.$c-black, 0.85);
+  }
 }

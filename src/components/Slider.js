@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.scss';
+import { IconArrowLeft, IconArrowRight } from '../helpers/Icons';
 import Card from './Card';
 import './Slider.scss';
 
@@ -24,22 +25,24 @@ const Slider = ({ title, fetchUrl }) => {
 
   return (
     <div className="section-slider">
-      <h2>{title}</h2>
+      <h2 className="title-slider">{title}</h2>
       <Swiper
         modules={[Navigation]}
         slidesPerView="auto"
         navigation={{
-          nextEl: '.custom_next',
-          prevEl: '.custom_prev',
+          nextEl: '.arrow-slider--right',
+          prevEl: '.arrow-slider--left',
+          disabledClass: 'arrow-slider--disabled',
         }}
-        spaceBetween={20}
-        // loopedSlides={3}
-        // slidesPerGroup={3}
-        // loopFillGroupWithBlank
+        spaceBetween={15}
         className="movies-container"
       >
-        <div className="custom_next" />
-        <div className="custom_prev" />
+        <div className="arrow-slider arrow-slider--right" role="button">
+          <IconArrowLeft className="arrow-icon" />
+        </div>
+        <div className="arrow-slider arrow-slider--left" role="button">
+          <IconArrowRight className="arrow-icon" />
+        </div>
         {movies.map((movie) => (
           <SwiperSlide className="swiper-slide" movie={movie} key={movie.id}>
             <Card movie={movie} key={movie.id} />
