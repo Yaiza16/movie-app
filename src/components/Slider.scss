@@ -1,5 +1,35 @@
+@use '../styles/variables' as v;
+.section-slider {
+  position: relative;
+}
+
 .movies-container {
   display: flex;
-  gap: 1rem;
+  // gap: 1rem;
   overflow-x: hidden;
+  width: 100%;
+}
+
+.swiper-slide {
+  width: 200px;
+  height: 300px;
+}
+
+.swiper-button-prev {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 0;
+  background-color: red;
+  z-index: 2;
+}
+
+.swiper-button-next {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 0;
+  bottom: 0;
+  background-color: red;
+  z-index: 2;
 }
