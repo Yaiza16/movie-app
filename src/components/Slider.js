@@ -27,8 +27,10 @@ const Slider = ({ title, fetchUrl }) => {
     <div className="section-slider">
       <h2 className="title-slider">{title}</h2>
       <Swiper
-        modules={[Navigation]}
+        // modules={[Navigation]}
         slidesPerView="auto"
+        slidesPerGroup={1}
+        slidesPerGroupAuto="auto"
         navigation={{
           nextEl: '.arrow-slider--right',
           prevEl: '.arrow-slider--left',
