@@ -1,9 +1,11 @@
 import React from 'react';
+import Slider from '../components/Slider';
+import requests from '../helpers/requests';
 
 const MainPage = () => {
   return (
     <div>
-      <h1>MainPage</h1>
+      <Slider title="Trending now" fetchUrl={requests.fetchTrendies} />
     </div>
   );
 };
