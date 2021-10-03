@@ -12,18 +12,18 @@ const Card = ({ movie, main }) => {
           <img
             className="movie-poster"
             src={`${baseUrlImage}${movie.poster_path} `}
-            alt="{movie.original_title || movie.original_name}"
+            alt={movie.title || movie.name}
           />
         </SwiperSlide>
       ) : (
         <SwiperSlide className="movie-card-container movie-card-container--back">
           <div className="card-info">
-            <p className="card-info-title">{movie.title}</p>
+            <p className="card-info-title">{movie.title || movie.name}</p>
           </div>
           <img
             className="movie-poster"
             src={`${baseUrlImage}${movie.backdrop_path} `}
-            alt="{movie.original_title || movie.original_name}"
+            alt={movie.title || movie.name}
           />
         </SwiperSlide>
       )}
