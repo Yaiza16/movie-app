@@ -1,0 +1,26 @@
+@use '../styles/variables' as v;
+
+.button-container {
+  margin-top: 1rem;
+  display: flex;
+}
+
+.button {
+  background-color: v.$c-white;
+  border-radius: 0.4rem;
+  padding: 0.5rem 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.1s ease-in;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &__text {
+    color: v.$c-black;
+    font-weight: 900;
+    font-size: 1.2rem;
+  }
+}
