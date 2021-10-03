@@ -1,13 +1,14 @@
 @use '../styles/variables' as v;
 
+.section-slider {
+  position: relative;
+  padding: 1.5rem 0;
+}
+
 .title-slider {
   margin-left: v.$p-general;
   color: v.$c-white;
   margin-bottom: 0.5rem;
-}
-
-.section-slider {
-  position: relative;
 }
 
 .movies-container {
