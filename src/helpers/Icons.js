@@ -2,6 +2,7 @@ import React from 'react';
 import { IconContext } from 'react-icons';
 import { BiCameraMovie, BiSearch, BiX } from 'react-icons/bi';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+import { CgDetailsMore } from 'react-icons/cg';
 
 const IconMovie = () => (
   <IconContext.Provider value={{ size: '40px', color: '#ce2e27' }}>
@@ -30,6 +31,12 @@ export const IconArrowRight = () => (
 export const IconArrowLeft = () => (
   <IconContext.Provider value={{ size: '50px', color: '#f6f6f6' }}>
     <MdKeyboardArrowRight />
+  </IconContext.Provider>
+);
+
+export const IconDetails = () => (
+  <IconContext.Provider value={{ size: '25px', color: '#1a1a1a' }}>
+    <CgDetailsMore />
   </IconContext.Provider>
 );
 
