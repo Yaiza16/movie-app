@@ -7,7 +7,7 @@ import { IconArrowLeft, IconArrowRight } from '../helpers/Icons';
 import Card from './Card';
 import './Slider.scss';
 
-const Slider = ({ title, fetchUrl }) => {
+const Slider = ({ title, fetchUrl, main }) => {
   const [movies, setMovies] = useState([]);
 
   SwiperCore.use([Navigation]);
@@ -30,7 +30,6 @@ const Slider = ({ title, fetchUrl }) => {
         // modules={[Navigation]}
         slidesPerView="auto"
         slidesPerGroup={1}
-        slidesPerGroupAuto="auto"
         navigation={{
           nextEl: '.arrow-slider--right',
           prevEl: '.arrow-slider--left',
@@ -46,8 +45,14 @@ const Slider = ({ title, fetchUrl }) => {
           <IconArrowRight className="arrow-icon" />
         </div>
         {movies.map((movie) => (
-          <SwiperSlide className="swiper-slide" movie={movie} key={movie.id}>
-            <Card movie={movie} key={movie.id} />
+          <SwiperSlide
+            className={
+              main ? `swiper-slide` : `swiper-slide swiper-slide--back`
+            }
+            movie={movie}
+            key={movie.id}
+          >
+            <Card movie={movie} key={movie.id} main={main} />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -2,6 +2,8 @@
 
 .title-slider {
   margin-left: v.$p-general;
+  color: v.$c-white;
+  margin-bottom: 0.5rem;
 }
 
 .section-slider {
@@ -27,9 +29,20 @@
   width: 200px;
   height: 300px;
 
-  // &:first-child {
-  //   padding-left: v.$p-general;
-  // }
+  &--back {
+    width: 200px;
+    height: 115px;
+
+    & > .swipper-wrapped {
+      width: 200px;
+      height: 115px;
+
+      & > .swiper-slide {
+        width: 200px;
+        height: 115px;
+      }
+    }
+  }
 }
 
 .arrow-slider {
