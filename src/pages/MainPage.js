@@ -7,8 +7,13 @@ const MainPage = () => {
     <div>
       <Slider title="Trending now" fetchUrl={requests.fetchTrendies} main />
       <Slider
-        title="Top Rated movies"
+        title="Top Rated Movies"
         fetchUrl={requests.fetchMoviesTopRated}
+        main={false}
+      />
+      <Slider
+        title="Top Rated Series"
+        fetchUrl={requests.fetchSeriesTopRated}
         main={false}
       />
     </div>
