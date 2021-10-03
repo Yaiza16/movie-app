@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import requests from '../helpers/requests';
 import './Hero.scss';
+import Button from './Button';
 
 const baseUrlImage = 'https://image.tmdb.org/t/p/original';
 
@@ -34,8 +35,9 @@ const Hero = () => {
         />
       </div>
       <div className="hero-inf">
-        <h1 className="hero-inf--title">{movie.name || movie.original_name}</h1>
-        <p className="hero-inf--overview">{movie.overview}</p>
+        <h1 className="hero-inf__title">{movie.name || movie.original_name}</h1>
+        <p className="hero-inf__overview">{movie.overview}</p>
+        <Button text="See details" />
       </div>
     </div>
   );
