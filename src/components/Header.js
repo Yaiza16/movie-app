@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import IconMovie from '../helpers/Icons';
 import Form from './Form';
 import './Header.scss';
 
 const Header = () => {
+  const [header, setHeader] = useState(false);
+
+  const headerFixed = () => {
+    console.log(window.scrollY);
+    console.log(window.innerHeight);
+    if (window.scrollY > 1) {
+      setHeader(true);
+    } else {
+      setHeader(false);
+    }
+  };
+
+  window.addEventListener('scroll', headerFixed);
   return (
-    <header className="header">
+    <header className={header ? 'header header--background' : 'header'}>
       <NavLink to="/" className="nav-link-logo">
         <div className="logo">
           <IconMovie />
