@@ -28,7 +28,7 @@ const Slider = ({ title, fetchUrl, main }) => {
       <h2 className="title-slider">{title}</h2>
       <Swiper
         slidesPerView="auto"
-        slidesPerGroup={1}
+        // slidesPerGroup={1}
         navigation={{
           nextEl: '.arrow-slider--right',
           prevEl: '.arrow-slider--left',

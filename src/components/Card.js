@@ -22,7 +22,15 @@ const Card = ({ movie, main }) => {
           </div>
           <img
             className="movie-poster"
-            src={`${baseUrlImage}${movie.backdrop_path} `}
+            // src={
+            //   `${baseUrlImage}${movie.backdrop_path} ` ||
+            //   `{process.env.PUBLIC_URL} + /assets/defaultimage.png`
+            // }
+            src={
+              movie.backdrop_path
+                ? `${baseUrlImage}${movie.backdrop_path}`
+                : `${process.env.PUBLIC_URL}/assets/defaultimage.png`
+            }
             alt={movie.title || movie.name}
           />
         </SwiperSlide>
