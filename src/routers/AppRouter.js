@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from '../components/Header';
 import MainPage from '../pages/MainPage';
+import MoviesPage from '../pages/MoviesPage';
 
 const AppRouter = () => {
   return (
@@ -12,7 +13,7 @@ const AppRouter = () => {
           <h1>Search</h1>
         </Route>
         <Route path="/movies">
-          <h1>Movies</h1>
+          <MoviesPage />
         </Route>
         <Route path="/series">
           <h1>Movies</h1>
