@@ -17,7 +17,12 @@ const Hero = () => {
       let option;
       do {
         optionRandom = Math.floor(Math.random() * lengthRequest - 1);
-        option = request.data.results[optionRandom].backdrop_path || null;
+        // option = request.data.results[optionRandom].backdrop_path || null;
+        if (request.data.results[optionRandom].backdrop_path === undefined) {
+          option = null;
+        } else {
+          option = request.data.results[optionRandom].backdrop_path;
+        }
       } while (option === null);
       getMovie(request.data.results[optionRandom]);
       console.log(request.data.results[optionRandom]);
