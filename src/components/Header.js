@@ -8,8 +8,6 @@ const Header = () => {
   const [header, setHeader] = useState(false);
 
   const headerFixed = () => {
-    console.log(window.scrollY);
-    console.log(window.innerHeight);
     if (window.scrollY > 1) {
       setHeader(true);
     } else {
