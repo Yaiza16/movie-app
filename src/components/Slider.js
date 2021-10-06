@@ -1,12 +1,12 @@
-import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import 'swiper/swiper.scss';
+import './Slider.scss';
 import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper.scss';
+import useNearScreen from '../hooks/useNearScreen';
 import { IconArrowLeft, IconArrowRight } from '../helpers/Icons';
 import Card from './Card';
-import './Slider.scss';
-import useNearScreen from '../hooks/useNearScreen';
 
 const Slider = ({ title, fetchUrl, main }) => {
   const [movies, setMovies] = useState([]);
@@ -67,7 +67,9 @@ export default function LazySlider({ title, fetchUrl, main }) {
     <div ref={fromRef} className="section-slider-wrapper">
       {isNearScreen ? (
         <Slider title={title} fetchUrl={fetchUrl} main={main} />
-      ) : null}
+      ) : (
+        'Hola'
+      )}
     </div>
   );
 }
