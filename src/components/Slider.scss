@@ -1,5 +1,9 @@
 @use '../styles/variables' as v;
 
+.section-slider-wrapper {
+  min-height: 200px;
+}
+
 .section-slider {
   position: relative;
   padding: 1.5rem 0;

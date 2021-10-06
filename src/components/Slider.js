@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.scss';
@@ -59,4 +59,29 @@ const Slider = ({ title, fetchUrl, main }) => {
   );
 };
 
-export default Slider;
+export default function LazySlider({ title, fetchUrl, main }) {
+  const [show, setShow] = useState(false);
+  const elementRef = useRef();
+
+  useEffect(() => {
+    const onChange = (entries, observer) => {
+      const el = entries[0];
+      console.log(el.isIntersecting);
+      console.log(entries);
+      if (el.isIntersecting) {
+        setShow(true);
+        observer.unobserve(elementRef.current);
+      }
+    };
+    const observer = new IntersectionObserver(onChange, {
+      rootMargin: '100px',
+    });
+
+    observer.observe(elementRef.current);
+  });
+  return (
+    <div ref={elementRef} className="section-slider-wrapper">
+      {show ? <Slider title={title} fetchUrl={fetchUrl} main={main} /> : null}
+    </div>
+  );
+}
