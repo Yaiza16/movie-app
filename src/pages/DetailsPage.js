@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import { useParams } from 'react-router-dom';
+
+const baseUrlImage = 'https://image.tmdb.org/t/p/original';
 
 const DetailsPage = () => {
   const { id } = useParams();
@@ -27,7 +28,11 @@ const DetailsPage = () => {
     <div className="details-page-container">
       <div className="details-page">
         <div className="details-page__poster-container">
-          <img src="" alt="" className="details-page__poster" />
+          <img
+            src={`${baseUrlImage}${movie.poster_path}`}
+            alt={movie.title || movie.name}
+            className="details-page__poster"
+          />
         </div>
         <div className="details-page__inf">
           <h2 className="title-movie">{movie.title}</h2>
