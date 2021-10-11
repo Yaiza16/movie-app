@@ -1,7 +1,7 @@
 @use '../styles/variables' as v;
 
 .details-page-container {
-  margin: 6rem v.$p-general 2rem;
+  margin: 6rem 4rem 2rem;
   color: v.$c-white;
   font-family: v.$f-primary;
 }
@@ -10,7 +10,7 @@
   display: flex;
   width: 100%;
   height: auto;
-  gap: 1rem;
+  gap: 5rem;
 
   &__poster-container {
     width: 400px;
