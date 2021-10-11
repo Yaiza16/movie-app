@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import './DetailsPage.scss';
 import Card from '../components/Card';
-import Button from '../components/Button';
+import Button, { ButtonDisabled } from '../components/Button';
 import { IconStar } from '../helpers/Icons';
 import GenreButton from '../components/GenreButton';
 
@@ -109,7 +109,7 @@ const DetailsPage = () => {
                 className="movie-trailer-container movie-trailer-container--disabled"
                 href="!#"
               >
-                <Button text="Trailer not available" />
+                <ButtonDisabled text="Trailer not available" />
               </a>
             )}
           </div>

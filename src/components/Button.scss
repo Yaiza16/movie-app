@@ -23,4 +23,8 @@
     font-weight: 900;
     font-size: 1.2rem;
   }
+
+  &--disabled {
+    background-color: rgba(v.$c-white, 0.6);
+  }
 }

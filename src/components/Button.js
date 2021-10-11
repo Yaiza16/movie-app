@@ -13,4 +13,15 @@ const Button = ({ text }) => {
   );
 };
 
+export const ButtonDisabled = ({ text }) => {
+  return (
+    <div className="button-container">
+      <div className="button button--disabled">
+        <IconDetails />
+        <p className="button__text">{text}</p>
+      </div>
+    </div>
+  );
+};
+
 export default Button;
