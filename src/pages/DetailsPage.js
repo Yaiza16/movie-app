@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import './DetailsPage.scss';
 
 const baseUrlImage = 'https://image.tmdb.org/t/p/original';
 
@@ -37,7 +38,13 @@ const DetailsPage = () => {
         <div className="details-page__inf">
           <h2 className="title-movie">{movie.title}</h2>
           <p className="genres-movie">
-            {movie.genres && movie.genres.map((genre) => `${genre.name}, `)}
+            {movie.genres &&
+              movie.genres.map((genre, i, arr) => {
+                if (arr.length - 1 === i) {
+                  return `${genre.name} `;
+                }
+                return `${genre.name}, `;
+              })}
           </p>
 
           <p className="overview-movie">{movie.overview}</p>
