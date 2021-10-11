@@ -1,7 +1,7 @@
 @use '../styles/variables' as v;
 
 .details-page-container {
-  margin: 6rem v.$p-general;
+  margin: 6rem v.$p-general 2rem;
   color: v.$c-white;
   font-family: v.$f-primary;
 }
@@ -67,6 +67,7 @@
 
 .overview-movie {
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .movie-trailer-container {
