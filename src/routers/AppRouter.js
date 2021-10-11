@@ -35,7 +35,7 @@ const AppRouter = () => {
             <Route path="/series">
               <SeriesPage />
             </Route>
-            <Route exact path="/movie/:id">
+            <Route exact path="/category/movie/:id">
               <DetailsPage />
             </Route>
             <Route exact path="/serie/:id">

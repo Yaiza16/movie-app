@@ -14,7 +14,6 @@ const DetailsPage = () => {
   const [movie, setMovie] = useState([]);
   const [recommendation, setRecommendation] = useState([]);
   const [video, setVideo] = useState([]);
-  console.log(id);
 
   useEffect(() => {
     async function catchMovie() {

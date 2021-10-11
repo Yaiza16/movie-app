@@ -7,8 +7,11 @@ const baseUrlImage = 'https://image.tmdb.org/t/p/original';
 
 const Card = ({ movie, main, media }) => {
   const [mediaType, setMediaType] = useState('');
+  // const location = useLocation();
+  // const query = new URLSearchParams(location.search);
 
   useEffect(() => {
+    // query.set('id', movie.id);
     if (media === 'all') {
       setMediaType(movie.media_type);
     } else {
@@ -17,7 +20,7 @@ const Card = ({ movie, main, media }) => {
   }, []);
 
   return (
-    <Link to={`/${mediaType}/${movie.id}`}>
+    <Link to={`/category/${mediaType}/${movie.id}`}>
       <div className="swipper-wrapped">
         {main ? (
           <SwiperSlide className="movie-card-container">
