@@ -26,7 +26,7 @@ export const ButtonDisabled = ({ text }) => {
 
 export const ButtonTV = ({ text }) => {
   return (
-    <div className="button-container--TV">
+    <div className="button-container button-container--TV">
       <div className="button button">
         <IconRun />
         <p className="button__text">{text}</p>
