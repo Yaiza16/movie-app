@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import './DetailsPage.scss';
 import Card from '../components/Card';
 import Button from '../components/Button';
+import { IconStar } from '../helpers/Icons';
 
 const baseUrlImage = 'https://image.tmdb.org/t/p/original';
 
@@ -63,12 +64,18 @@ const DetailsPage = () => {
         <div className="details-page__poster-container">
           <img
             src={`${baseUrlImage}${movie.poster_path}`}
-            alt={movie.title || movie.name}
+            alt={movie.name || movie.title}
             className="details-page__poster"
           />
         </div>
         <div className="details-page__inf">
-          <h2 className="title-movie">{movie.title}</h2>
+          <div className="movie-title-container">
+            <h2 className="title-movie">{movie.title}</h2>
+            <div className="movie-average-container">
+              <IconStar />
+              <p className="icon-average">{movie.vote_average}</p>
+            </div>
+          </div>
           <div className="details-container">
             <p className="details-container__title">Genre: </p>
             <p className="details-container__inf genres-movie">
