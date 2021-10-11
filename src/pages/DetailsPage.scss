@@ -45,7 +45,8 @@
   }
 
   &__inf {
-    color: v.$c-red;
+    display: flex;
+    gap: 0.4rem;
   }
 }
 

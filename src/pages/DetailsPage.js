@@ -5,6 +5,7 @@ import './DetailsPage.scss';
 import Card from '../components/Card';
 import Button from '../components/Button';
 import { IconStar } from '../helpers/Icons';
+import GenreButton from '../components/GenreButton';
 
 const baseUrlImage = 'https://image.tmdb.org/t/p/original';
 
@@ -78,15 +79,18 @@ const DetailsPage = () => {
               </div>
             </div>
             <div className="details-container">
-              <p className="details-container__title">Genre: </p>
               <p className="details-container__inf genres-movie">
-                {movie.genres &&
+                {/* {movie.genres &&
                   movie.genres.map((genre, i, arr) => {
                     if (arr.length - 1 === i) {
                       return `${genre.name} `;
                     }
                     return `${genre.name}, `;
-                  })}
+                  })} */}
+                {movie.genres &&
+                  movie.genres.map((genre) => (
+                    <GenreButton text={genre.name} />
+                  ))}
               </p>
             </div>
 
