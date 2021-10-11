@@ -52,7 +52,7 @@ const DetailsPage = () => {
       console.log(video);
       console.log(requestVideo);
       console.log(requestVideo.data.results[0]);
-      console.log(requestVideo.data.results[0].key);
+      // console.log(requestVideo?.data?.results[0].key);
     }
     catchMovie();
     catchRecommendation();
@@ -79,7 +79,7 @@ const DetailsPage = () => {
               </div>
             </div>
             <div className="details-container">
-              <p className="details-container__inf genres-movie">
+              <div className="details-container__inf genres-movie">
                 {/* {movie.genres &&
                   movie.genres.map((genre, i, arr) => {
                     if (arr.length - 1 === i) {
@@ -91,18 +91,27 @@ const DetailsPage = () => {
                   movie.genres.map((genre) => (
                     <GenreButton text={genre.name} />
                   ))}
-              </p>
+              </div>
             </div>
 
             <p className="overview-movie">{movie.overview}</p>
-            <a
-              className="movie-trailer-container"
-              href={`https://www.youtube.com/watch?v=${video.key}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Button text="Watch trailer" />
-            </a>
+            {video?.key ? (
+              <a
+                className="movie-trailer-container"
+                href={`https://www.youtube.com/watch?v=${video.key}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button text="Watch trailer" />
+              </a>
+            ) : (
+              <a
+                className="movie-trailer-container movie-trailer-container--disabled"
+                href="!#"
+              >
+                <Button text="Trailer not available" />
+              </a>
+            )}
           </div>
           <div className="recommendations">
             <p className="recommendations-title">Recommendations: </p>

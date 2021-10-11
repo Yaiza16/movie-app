@@ -45,6 +45,7 @@
   }
 
   &__inf {
+    margin-top: 0.2rem;
     display: flex;
     gap: 0.4rem;
   }
@@ -73,6 +74,10 @@
 
 .movie-trailer-container {
   text-decoration: none;
+
+  &--disabled {
+    pointer-events: none;
+  }
 }
 .recommendations {
   margin-top: 0.8rem;
