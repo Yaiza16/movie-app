@@ -23,9 +23,16 @@
     object-fit: cover;
   }
 
+  &__inf-movie {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__inf {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+
     gap: 0.4rem;
   }
 }

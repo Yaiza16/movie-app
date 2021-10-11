@@ -69,35 +69,37 @@ const DetailsPage = () => {
           />
         </div>
         <div className="details-page__inf">
-          <div className="movie-title-container">
-            <h2 className="title-movie">{movie.title}</h2>
-            <div className="movie-average-container">
-              <IconStar />
-              <p className="icon-average">{movie.vote_average}</p>
+          <div className="details-page__inf-movie">
+            <div className="movie-title-container">
+              <h2 className="title-movie">{movie.title}</h2>
+              <div className="movie-average-container">
+                <IconStar />
+                <p className="icon-average">{movie.vote_average}</p>
+              </div>
             </div>
-          </div>
-          <div className="details-container">
-            <p className="details-container__title">Genre: </p>
-            <p className="details-container__inf genres-movie">
-              {movie.genres &&
-                movie.genres.map((genre, i, arr) => {
-                  if (arr.length - 1 === i) {
-                    return `${genre.name} `;
-                  }
-                  return `${genre.name}, `;
-                })}
-            </p>
-          </div>
+            <div className="details-container">
+              <p className="details-container__title">Genre: </p>
+              <p className="details-container__inf genres-movie">
+                {movie.genres &&
+                  movie.genres.map((genre, i, arr) => {
+                    if (arr.length - 1 === i) {
+                      return `${genre.name} `;
+                    }
+                    return `${genre.name}, `;
+                  })}
+              </p>
+            </div>
 
-          <p className="overview-movie">{movie.overview}</p>
-          <a
-            className="movie-trailer-container"
-            href={`https://www.youtube.com/watch?v=${video.key}`}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Button text="Watch trailer" />
-          </a>
+            <p className="overview-movie">{movie.overview}</p>
+            <a
+              className="movie-trailer-container"
+              href={`https://www.youtube.com/watch?v=${video.key}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Button text="Watch trailer" />
+            </a>
+          </div>
           <div className="recommendations">
             <p className="recommendations-title">Recommendations: </p>
             <div className="recommendations-cards-container">
