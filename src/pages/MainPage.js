@@ -7,16 +7,23 @@ const MainPage = () => {
   return (
     <div>
       <Hero />
-      <Slider title="Trending now" fetchUrl={requests.fetchTrendies} main />
+      <Slider
+        title="Trending now"
+        fetchUrl={requests.fetchTrendies}
+        main
+        media="all"
+      />
       <Slider
         title="Top Rated Movies"
         fetchUrl={requests.fetchMoviesTopRated}
         main={false}
+        media="movie"
       />
       <Slider
         title="Top Rated Series"
         fetchUrl={requests.fetchSeriesTopRated}
         main={false}
+        media="serie"
       />
     </div>
   );

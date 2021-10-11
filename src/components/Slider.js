@@ -8,7 +8,7 @@ import useNearScreen from '../hooks/useNearScreen';
 import { IconArrowLeft, IconArrowRight } from '../helpers/Icons';
 import Card from './Card';
 
-const Slider = ({ title, fetchUrl, main }) => {
+const Slider = ({ title, fetchUrl, main, media }) => {
   const [movies, setMovies] = useState([]);
 
   SwiperCore.use([Navigation]);
@@ -52,7 +52,7 @@ const Slider = ({ title, fetchUrl, main }) => {
             movie={movie}
             key={movie.id}
           >
-            <Card movie={movie} key={movie.id} main={main} />
+            <Card movie={movie} key={movie.id} main={main} media={media} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -60,13 +60,13 @@ const Slider = ({ title, fetchUrl, main }) => {
   );
 };
 
-export default function LazySlider({ title, fetchUrl, main }) {
+export default function LazySlider({ title, fetchUrl, main, media }) {
   const { isNearScreen, fromRef } = useNearScreen();
 
   return (
     <div ref={fromRef} className="section-slider-wrapper">
       {isNearScreen ? (
-        <Slider title={title} fetchUrl={fetchUrl} main={main} />
+        <Slider title={title} fetchUrl={fetchUrl} main={main} media={media} />
       ) : (
         'Hola'
       )}

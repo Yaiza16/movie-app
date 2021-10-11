@@ -119,7 +119,7 @@ const DetailsPage = () => {
             <p className="recommendations-title">Recommendations: </p>
             <div className="recommendations-cards-container">
               {recommendation.map((rec) => {
-                return <Card movie={rec} key={rec.id} main={false} />;
+                return <Card movie={rec} key={rec.id} main media="movie" />;
               })}
             </div>
           </div>

@@ -38,6 +38,9 @@ const AppRouter = () => {
             <Route exact path="/movie/:id">
               <DetailsPage />
             </Route>
+            <Route exact path="/serie/:id">
+              <h1>Hola</h1>
+            </Route>
             <Route exact path="/">
               <MainPage />
             </Route>

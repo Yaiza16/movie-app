@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Card.scss';
 import { SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 
 const baseUrlImage = 'https://image.tmdb.org/t/p/original';
 
-const Card = ({ movie, main }) => {
+const Card = ({ movie, main, media }) => {
+  const [mediaType, setMediaType] = useState('');
+
+  useEffect(() => {
+    if (media === 'all') {
+      setMediaType(movie.media_type);
+    } else {
+      setMediaType(media);
+    }
+  }, []);
+
   return (
-    <Link to={`/movie/${movie.id}`}>
+    <Link to={`/${mediaType}/${movie.id}`}>
       <div className="swipper-wrapped">
         {main ? (
           <SwiperSlide className="movie-card-container">
