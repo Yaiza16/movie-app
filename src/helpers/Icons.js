@@ -4,6 +4,7 @@ import { BiCameraMovie, BiSearch, BiX } from 'react-icons/bi';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import { CgDetailsMore } from 'react-icons/cg';
 import { AiFillStar } from 'react-icons/ai';
+import { RiMovieLine } from 'react-icons/ri';
 
 const IconMovie = () => (
   <IconContext.Provider value={{ size: '40px', color: '#ce2e27' }}>
@@ -44,6 +45,12 @@ export const IconDetails = () => (
 export const IconStar = () => (
   <IconContext.Provider value={{ size: '20px', color: '#f06c65' }}>
     <AiFillStar />
+  </IconContext.Provider>
+);
+
+export const IconRun = () => (
+  <IconContext.Provider value={{ size: '20px', color: '#1a1a1a' }}>
+    <RiMovieLine />
   </IconContext.Provider>
 );
 
