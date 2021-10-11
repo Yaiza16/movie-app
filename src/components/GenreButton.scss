@@ -1,0 +1,9 @@
+@use '../styles/variables' as v;
+
+.genre-button-text {
+  padding: 0.3rem;
+  border-radius: 1rem;
+  border: 1px solid v.$c-red;
+  color: v.$c-red;
+  font-size: 0.7rem;
+}
