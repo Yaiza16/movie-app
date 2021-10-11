@@ -3,6 +3,7 @@ import { IconContext } from 'react-icons';
 import { BiCameraMovie, BiSearch, BiX } from 'react-icons/bi';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import { CgDetailsMore } from 'react-icons/cg';
+import { AiFillStar } from 'react-icons/ai';
 
 const IconMovie = () => (
   <IconContext.Provider value={{ size: '40px', color: '#ce2e27' }}>
@@ -37,6 +38,12 @@ export const IconArrowLeft = () => (
 export const IconDetails = () => (
   <IconContext.Provider value={{ size: '25px', color: '#1a1a1a' }}>
     <CgDetailsMore />
+  </IconContext.Provider>
+);
+
+export const IconStar = () => (
+  <IconContext.Provider value={{ size: '20px', color: '#f06c65' }}>
+    <AiFillStar />
   </IconContext.Provider>
 );
 
