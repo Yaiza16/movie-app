@@ -95,23 +95,25 @@ const DetailsPage = () => {
             </div>
 
             <p className="overview-movie">{movie.overview}</p>
-            {video?.key ? (
-              <a
-                className="movie-trailer-container"
-                href={`https://www.youtube.com/watch?v=${video.key}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button text="Watch trailer" />
-              </a>
-            ) : (
-              <a
-                className="movie-trailer-container movie-trailer-container--disabled"
-                href="!#"
-              >
-                <ButtonDisabled text="Trailer not available" />
-              </a>
-            )}
+            <div className="button-trailer-container">
+              {video?.key ? (
+                <a
+                  className="movie-trailer-container"
+                  href={`https://www.youtube.com/watch?v=${video.key}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Button text="Watch trailer" />
+                </a>
+              ) : (
+                <a
+                  className="movie-trailer-container movie-trailer-container--disabled"
+                  href="!#"
+                >
+                  <ButtonDisabled text="Trailer not available" />
+                </a>
+              )}
+            </div>
           </div>
           <div className="recommendations">
             <p className="recommendations-title">Recommendations: </p>

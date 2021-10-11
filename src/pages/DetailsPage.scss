@@ -9,6 +9,7 @@
 .details-page {
   display: flex;
   width: 100%;
+  height: auto;
   gap: 1rem;
 
   &__poster-container {
@@ -71,9 +72,13 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.button-trailer-container {
+  display: flex;
+}
 
 .movie-trailer-container {
   text-decoration: none;
+  width: auto;
 
   &--disabled {
     pointer-events: none;
