@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import './DetailsPage.scss';
 import Card from '../components/Card';
+import Button from '../components/Button';
 
 const baseUrlImage = 'https://image.tmdb.org/t/p/original';
 
@@ -10,6 +11,7 @@ const DetailsPage = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState([]);
   const [recommendation, setRecommendation] = useState([]);
+  const [video, setVideo] = useState([]);
   console.log(id);
 
   useEffect(() => {
@@ -35,8 +37,24 @@ const DetailsPage = () => {
       }
       return requestRecommendation;
     }
+
+    async function catchVideo() {
+      const requestVideo = await axios.get(
+        `https://api.themoviedb.org/3/movie/${id}/videos?api_key=9650301cf84b0f134776248aa6863452&language=en-US`
+      );
+      if (requestVideo) {
+        setVideo(requestVideo.data.results[0]);
+      } else {
+        setVideo([]);
+      }
+      console.log(video);
+      console.log(requestVideo);
+      console.log(requestVideo.data.results[0]);
+      console.log(requestVideo.data.results[0].key);
+    }
     catchMovie();
     catchRecommendation();
+    catchVideo();
   }, [id]);
 
   return (
@@ -65,6 +83,14 @@ const DetailsPage = () => {
           </div>
 
           <p className="overview-movie">{movie.overview}</p>
+          <a
+            className="movie-trailer-container"
+            href={`https://www.youtube.com/watch?v=${video.key}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Button text="Watch trailer" />
+          </a>
           <div className="recommendations">
             <p className="recommendations-title">Recommendations: </p>
             <div className="recommendations-cards-container">
