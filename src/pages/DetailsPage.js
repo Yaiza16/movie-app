@@ -14,6 +14,10 @@ const DetailsPage = () => {
   const [movie, setMovie] = useState([]);
   const [recommendation, setRecommendation] = useState([]);
   const [video, setVideo] = useState([]);
+  const [cast, setCast] = useState([]);
+  const [director, setDirector] = useState([]);
+  const [screenPlayers, setScreenPlayers] = useState([]);
+  const [story, setStory] = useState([]);
 
   useEffect(() => {
     async function catchMovie() {
@@ -53,9 +57,40 @@ const DetailsPage = () => {
       console.log(requestVideo.data.results[0]);
       // console.log(requestVideo?.data?.results[0].key);
     }
+
+    async function catchCastAndDirector() {
+      const requestCast = await axios.get(
+        `https://api.themoviedb.org/3/movie/${id}/credits?api_key=9650301cf84b0f134776248aa6863452&language=en-US`
+      );
+      console.log(requestCast.data.cast);
+      if (requestCast.data.cast.length >= 11) {
+        setCast(requestCast.data.cast.slice(0, 11));
+      } else {
+        setCast(requestCast.data.cast);
+      }
+
+      const directorMovie = requestCast.data.crew.filter(
+        (person) => person.job === 'Director'
+      );
+      setDirector(directorMovie);
+
+      const screenPlayersMovie = requestCast.data.crew.filter(
+        (person) => person.job === 'Screenplay'
+      );
+      setScreenPlayers(screenPlayersMovie);
+
+      const storyMovie = requestCast.data.crew.filter(
+        (person) => person.job === 'Story'
+      );
+      setStory(storyMovie);
+
+      console.log(directorMovie);
+    }
+
     catchMovie();
     catchRecommendation();
     catchVideo();
+    catchCastAndDirector();
   }, [id]);
 
   return (
@@ -94,6 +129,54 @@ const DetailsPage = () => {
             </div>
 
             <p className="overview-movie">{movie.overview}</p>
+            <div className="director-container">
+              <p className="director-title title-section">Directed by: </p>
+              <p className="director-name name-section">
+                {director.map((person, i, arr) => {
+                  if (arr.length - 1 === i) {
+                    return ` ${person.name}`;
+                  }
+                  return ` ${person.name},`;
+                })}
+              </p>
+            </div>
+            <div className="screenplayer-container">
+              <p className="screenplayers-title title-section">
+                Screenplay by:{' '}
+              </p>
+              <p className="screenplayers-name name-section">
+                {screenPlayers.map((person, i, arr) => {
+                  if (arr.length - 1 === i) {
+                    return ` ${person.name}`;
+                  }
+                  return ` ${person.name},`;
+                })}
+              </p>
+            </div>
+
+            <div className="story-container">
+              <p className="story-title title-section">Story by: </p>
+              <p className="story-name name-section">
+                {story.map((person, i, arr) => {
+                  if (arr.length - 1 === i) {
+                    return ` ${person.name}`;
+                  }
+                  return ` ${person.name},`;
+                })}
+              </p>
+            </div>
+
+            <div className="cast-container">
+              <p className="cast-title title-section">Starring: </p>
+              <p className="actor-name name-section">
+                {cast.map((actor, i, arr) => {
+                  if (arr.length - 1 === i) {
+                    return ` ${actor.name}`;
+                  }
+                  return ` ${actor.name},`;
+                })}
+              </p>
+            </div>
             <div className="button-trailer-container">
               {video?.key ? (
                 <a
