@@ -18,8 +18,16 @@ const DetailsPage = () => {
   const [director, setDirector] = useState([]);
   const [screenPlayers, setScreenPlayers] = useState([]);
   const [story, setStory] = useState([]);
+  const [year, setYear] = useState('');
+  const [duration, setDuration] = useState('');
 
   useEffect(() => {
+    function getDuration(time) {
+      const hours = Math.floor(time / 60);
+      const minutes = time % 60;
+      return `${hours}h ${minutes}`;
+    }
+
     async function catchMovie() {
       const request = await axios.get(
         `https://api.themoviedb.org/3/movie/${id}?api_key=9650301cf84b0f134776248aa6863452`
@@ -28,9 +36,12 @@ const DetailsPage = () => {
       console.log(request.data.genres[0].name);
       console.log(request.data.genres);
       setMovie(request.data);
-
+      const newYear = new Date(request.data.release_date);
+      setYear(newYear.getFullYear());
+      setDuration(getDuration(request.data.runtime));
       return request;
     }
+
     async function catchRecommendation() {
       const requestRecommendation = await axios.get(
         `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=9650301cf84b0f134776248aa6863452&language=en-US&page=1`
@@ -107,6 +118,9 @@ const DetailsPage = () => {
           <div className="details-page__inf-movie">
             <div className="movie-title-container">
               <h2 className="title-movie">{movie.title}</h2>
+              <p className="movie-year">{year}</p>
+              <p className="movie-duration">{duration}</p>
+
               <div className="movie-average-container">
                 <IconStar />
                 <p className="icon-average">{movie.vote_average}</p>
@@ -114,13 +128,6 @@ const DetailsPage = () => {
             </div>
             <div className="details-container">
               <div className="details-container__inf genres-movie">
-                {/* {movie.genres &&
-                  movie.genres.map((genre, i, arr) => {
-                    if (arr.length - 1 === i) {
-                      return `${genre.name} `;
-                    }
-                    return `${genre.name}, `;
-                  })} */}
                 {movie.genres &&
                   movie.genres.map((genre) => (
                     <GenreButton text={genre.name} />
@@ -140,19 +147,21 @@ const DetailsPage = () => {
                 })}
               </p>
             </div>
-            <div className="screenplayer-container">
-              <p className="screenplayers-title title-section">
-                Screenplay by:{' '}
-              </p>
-              <p className="screenplayers-name name-section">
-                {screenPlayers.map((person, i, arr) => {
-                  if (arr.length - 1 === i) {
-                    return ` ${person.name}`;
-                  }
-                  return ` ${person.name},`;
-                })}
-              </p>
-            </div>
+            {screenPlayers === [] ? (
+              <div className="screenplayer-container">
+                <p className="screenplayers-title title-section">
+                  Screenplay by:{' '}
+                </p>
+                <p className="screenplayers-name name-section">
+                  {screenPlayers.map((person, i, arr) => {
+                    if (arr.length - 1 === i) {
+                      return ` ${person.name}`;
+                    }
+                    return ` ${person.name},`;
+                  })}
+                </p>
+              </div>
+            ) : null}
 
             <div className="story-container">
               <p className="story-title title-section">Story by: </p>
