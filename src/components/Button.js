@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconDetails } from '../helpers/Icons';
+import { IconDetails, IconRun } from '../helpers/Icons';
 import './Button.scss';
 
 const Button = ({ text }) => {
@@ -18,6 +18,28 @@ export const ButtonDisabled = ({ text }) => {
     <div className="button-container">
       <div className="button button--disabled">
         <IconDetails />
+        <p className="button__text">{text}</p>
+      </div>
+    </div>
+  );
+};
+
+export const ButtonTV = ({ text }) => {
+  return (
+    <div className="button-container--TV">
+      <div className="button button">
+        <IconRun />
+        <p className="button__text">{text}</p>
+      </div>
+    </div>
+  );
+};
+
+export const ButtonTVDisabled = ({ text }) => {
+  return (
+    <div className="button-container">
+      <div className="button button--disabled">
+        <IconRun />
         <p className="button__text">{text}</p>
       </div>
     </div>
