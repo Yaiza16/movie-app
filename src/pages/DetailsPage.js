@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import './DetailsPage.scss';
-import Card from '../components/Card';
+// import Card from '../components/Card';
 import Button, { ButtonDisabled } from '../components/Button';
 import { IconStar } from '../helpers/Icons';
 import GenreButton from '../components/GenreButton';
+import CastSection from '../components/CastSection/CastSection';
+import Recommendations from '../components/Recommendations/Recommendations';
 
 const baseUrlImage = 'https://image.tmdb.org/t/p/original';
 
@@ -25,7 +27,7 @@ const DetailsPage = () => {
     function getDuration(time) {
       const hours = Math.floor(time / 60);
       const minutes = time % 60;
-      return `${hours}h ${minutes}`;
+      return `${hours}h ${minutes}min`;
     }
 
     async function catchMovie() {
@@ -119,63 +121,32 @@ const DetailsPage = () => {
             <div className="movie-title-container">
               <h2 className="title-movie">{movie.title}</h2>
               <p className="movie-year">{year}</p>
-              <p className="movie-duration">{duration}</p>
-
               <div className="movie-average-container">
                 <IconStar />
                 <p className="icon-average">{movie.vote_average}</p>
               </div>
             </div>
-            <div className="details-container">
-              <div className="details-container__inf genres-movie">
-                {movie.genres &&
-                  movie.genres.map((genre) => (
-                    <GenreButton text={genre.name} />
-                  ))}
+            <div className="movie-second-line">
+              <div className="details-container">
+                <div className="details-container__inf genres-movie">
+                  {movie.genres &&
+                    movie.genres.map((genre) => (
+                      <GenreButton text={genre.name} />
+                    ))}
+                </div>
+              </div>
+              <div className="movie-more-details-container">
+                <p className="movie-duration">{duration}</p>
               </div>
             </div>
 
             <p className="overview-movie">{movie.overview}</p>
-            <div className="director-container">
-              <p className="director-title title-section">Directed by: </p>
-              <p className="director-name name-section">
-                {director.map((person, i, arr) => {
-                  if (arr.length - 1 === i) {
-                    return ` ${person.name}`;
-                  }
-                  return ` ${person.name},`;
-                })}
-              </p>
-            </div>
-            {screenPlayers === [] ? (
-              <div className="screenplayer-container">
-                <p className="screenplayers-title title-section">
-                  Screenplay by:{' '}
-                </p>
-                <p className="screenplayers-name name-section">
-                  {screenPlayers.map((person, i, arr) => {
-                    if (arr.length - 1 === i) {
-                      return ` ${person.name}`;
-                    }
-                    return ` ${person.name},`;
-                  })}
-                </p>
-              </div>
-            ) : null}
+            <CastSection title="Directed by: " cast={director} />
+            <CastSection title="Screenplay by: " cast={screenPlayers} />
+            <CastSection title="Story by: " cast={story} />
+            <CastSection title="Starring: " cast={cast} />
 
-            <div className="story-container">
-              <p className="story-title title-section">Story by: </p>
-              <p className="story-name name-section">
-                {story.map((person, i, arr) => {
-                  if (arr.length - 1 === i) {
-                    return ` ${person.name}`;
-                  }
-                  return ` ${person.name},`;
-                })}
-              </p>
-            </div>
-
-            <div className="cast-container">
+            {/* <div className="cast-container">
               <p className="cast-title title-section">Starring: </p>
               <p className="actor-name name-section">
                 {cast.map((actor, i, arr) => {
@@ -185,7 +156,7 @@ const DetailsPage = () => {
                   return ` ${actor.name},`;
                 })}
               </p>
-            </div>
+            </div> */}
             <div className="button-trailer-container">
               {video?.key ? (
                 <a
@@ -206,8 +177,10 @@ const DetailsPage = () => {
               )}
             </div>
           </div>
-          <div className="recommendations">
-            <p className="recommendations-title">Recommendations: </p>
+          {/* <div className="recommendations">
+            <p className="recommendations-title title-section">
+              Recommendations:{' '}
+            </p>
             <div className="recommendations-cards-container">
               {recommendation.map((rec) => {
                 return (
@@ -215,7 +188,11 @@ const DetailsPage = () => {
                 );
               })}
             </div>
-          </div>
+          </div> */}
+          <Recommendations
+            title="Recommendations: "
+            recommendation={recommendation}
+          />
         </div>
       </div>
     </div>

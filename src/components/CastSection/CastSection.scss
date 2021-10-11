@@ -1,0 +1,10 @@
+@use '../../styles/variables' as v;
+
+.cast-title {
+  display: inline;
+  color: v.$c-gray;
+}
+
+.cast-item {
+  display: inline;
+}

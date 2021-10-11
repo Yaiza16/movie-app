@@ -34,6 +34,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: v.$c-secundary;
+    border-radius: 1rem;
+    padding: 2rem;
 
     gap: 0.4rem;
   }
@@ -58,14 +61,33 @@
 
 .movie-title-container {
   display: flex;
-  gap: 1.5rem;
+  gap: 0.5rem;
   align-items: center;
+}
+.movie-second-line {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.movie-more-details-container {
+  display: flex;
+  gap: 0.2rem;
+  margin: 0.4rem 0;
+}
+
+.movie-duration {
+  font-size: 0.8rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.2rem;
+  // background-color: v.$c-gray;
+  // border: 1px solid v.$c-white;
 }
 
 .movie-average-container {
+  margin-left: 0.5rem;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.25rem;
 }
 
 .title-movie {
@@ -73,10 +95,10 @@
   margin-bottom: 0.4rem;
 }
 
-.title-section {
-  display: inline;
-  color: v.$c-gray;
-}
+// .title-section {
+//   display: inline;
+//   color: v.$c-gray;
+// }
 
 .name-section {
   display: inline;
@@ -97,17 +119,4 @@
   &--disabled {
     pointer-events: none;
   }
-}
-.recommendations {
-  margin-top: 0.8rem;
-}
-
-.recommendations-title {
-  margin-bottom: 0.5rem;
-  font-weight: 900;
-}
-
-.recommendations-cards-container {
-  display: flex;
-  gap: 2rem;
 }
