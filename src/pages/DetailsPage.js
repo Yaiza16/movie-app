@@ -141,18 +141,6 @@ const DetailsPage = () => {
             <CastSection title="Screenplay by: " cast={screenPlayers} />
             <CastSection title="Story by: " cast={story} />
             <CastSection title="Starring: " cast={cast} />
-
-            {/* <div className="cast-container">
-              <p className="cast-title title-section">Starring: </p>
-              <p className="actor-name name-section">
-                {cast.map((actor, i, arr) => {
-                  if (arr.length - 1 === i) {
-                    return ` ${actor.name}`;
-                  }
-                  return ` ${actor.name},`;
-                })}
-              </p>
-            </div> */}
             <div className="button-trailer-container">
               {video?.key ? (
                 <a
@@ -173,18 +161,6 @@ const DetailsPage = () => {
               )}
             </div>
           </div>
-          {/* <div className="recommendations">
-            <p className="recommendations-title title-section">
-              Recommendations:{' '}
-            </p>
-            <div className="recommendations-cards-container">
-              {recommendation.map((rec) => {
-                return (
-                  <Card movie={rec} key={rec.id} main={false} media="movie" />
-                );
-              })}
-            </div>
-          </div> */}
           <Recommendations
             title="Recommendations: "
             recommendation={recommendation}
