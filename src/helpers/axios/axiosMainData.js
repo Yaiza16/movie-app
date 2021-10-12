@@ -7,7 +7,6 @@ const axiosMainData = async (id, type) => {
   const res = await axios.get(
     `${baseRequest}/${type}/${id}?api_key=${API_KEY}&language=en-US`
   );
-
   const { data } = res;
   return data;
 };
