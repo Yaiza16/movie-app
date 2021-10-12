@@ -1,5 +1,5 @@
 const getVideo = (data) => {
-  if (data?.results?.lenght >= 0) {
+  if (data?.results?.length >= 0) {
     return data.results.filter((video) => video.type === 'Trailer');
   }
   return null;
