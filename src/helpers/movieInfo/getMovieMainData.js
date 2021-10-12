@@ -14,6 +14,7 @@ const getMovieMainData = (data) => ({
   name: data.title,
   year: getYear(data.release_date),
   duration: getDuration(data.runtime),
+  backdrop_path: data.backdrop_path,
 });
 
 export default getMovieMainData;
