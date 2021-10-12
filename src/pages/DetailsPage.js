@@ -8,6 +8,7 @@ import { IconStar } from '../helpers/Icons';
 import GenreButton from '../components/GenreButton';
 import CastSection from '../components/CastSection/CastSection';
 import Recommendations from '../components/Recommendations/Recommendations';
+import useMovie from '../hooks/useMovie';
 
 const baseUrlImage = 'https://image.tmdb.org/t/p/original';
 
@@ -22,8 +23,12 @@ const DetailsPage = () => {
   const [story, setStory] = useState([]);
   const [year, setYear] = useState('');
   const [duration, setDuration] = useState('');
+  const { movieNew, getNewMovie } = useMovie();
 
   useEffect(() => {
+    getNewMovie(id, 'movie');
+    console.log(movieNew);
+
     function getDuration(time) {
       const hours = Math.floor(time / 60);
       const minutes = time % 60;
@@ -34,9 +39,7 @@ const DetailsPage = () => {
       const request = await axios.get(
         `https://api.themoviedb.org/3/movie/${id}?api_key=9650301cf84b0f134776248aa6863452`
       );
-      console.log(request);
-      console.log(request.data.genres[0].name);
-      console.log(request.data.genres);
+
       setMovie(request.data);
       const newYear = new Date(request.data.release_date);
       setYear(newYear.getFullYear());
@@ -65,17 +68,12 @@ const DetailsPage = () => {
       } else {
         setVideo([]);
       }
-      console.log(video);
-      console.log(requestVideo);
-      console.log(requestVideo.data.results[0]);
-      // console.log(requestVideo?.data?.results[0].key);
     }
 
     async function catchCastAndDirector() {
       const requestCast = await axios.get(
         `https://api.themoviedb.org/3/movie/${id}/credits?api_key=9650301cf84b0f134776248aa6863452&language=en-US`
       );
-      console.log(requestCast.data.cast);
       if (requestCast.data.cast.length >= 11) {
         setCast(requestCast.data.cast.slice(0, 11));
       } else {
@@ -96,8 +94,6 @@ const DetailsPage = () => {
         (person) => person.job === 'Story'
       );
       setStory(storyMovie);
-
-      console.log(directorMovie);
     }
 
     catchMovie();
