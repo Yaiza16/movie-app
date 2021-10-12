@@ -1,5 +1,3 @@
-const getRecommendations = (data) => ({
-  recommendations: data,
-});
+const getRecommendations = (data) => data.results;
 
 export default getRecommendations;

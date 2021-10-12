@@ -11,7 +11,7 @@ const getDuration = (time) => {
 };
 
 const getMovieMainData = (data) => ({
-  name: data.name,
+  name: data.title,
   year: getYear(data.release_date),
   duration: getDuration(data.runtime),
 });
