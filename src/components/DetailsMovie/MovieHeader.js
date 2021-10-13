@@ -21,10 +21,10 @@ const MovieHeader = ({ movie, type }) => {
             movie.genres.map((genre) => <GenreButton text={genre.name} />)}
         </div>
         {/* <div className="movie-duration-container"> */}
-        {type === 'movies' ? (
+        {type === 'movie' ? (
           <p className="movie-duration">{movie.duration}</p>
         ) : (
-          <p className="movie-duration">{movie.seasons}</p>
+          <p className="movie-duration">{`${movie.seasons} seasons`}</p>
         )}
         {/* </div> */}
       </div>
