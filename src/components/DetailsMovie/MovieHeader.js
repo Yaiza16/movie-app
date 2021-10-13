@@ -3,7 +3,7 @@ import { IconStar } from '../../helpers/Icons';
 import GenreButton from '../GenreButton';
 import './MovieHeader.scss';
 
-const MovieHeader = ({ movie }) => {
+const MovieHeader = ({ movie, type }) => {
   return (
     <div className="movie-header-container">
       <div className="movie-header-section">
@@ -21,7 +21,11 @@ const MovieHeader = ({ movie }) => {
             movie.genres.map((genre) => <GenreButton text={genre.name} />)}
         </div>
         {/* <div className="movie-duration-container"> */}
-        <p className="movie-duration">{movie.duration}</p>
+        {type === 'movies' ? (
+          <p className="movie-duration">{movie.duration}</p>
+        ) : (
+          <p className="movie-duration">{movie.seasons}</p>
+        )}
         {/* </div> */}
       </div>
     </div>
