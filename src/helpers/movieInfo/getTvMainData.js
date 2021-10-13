@@ -26,7 +26,7 @@ const getTvMainData = (data) => ({
   inProduction: data.in_production,
   firstAirDate: data.first_air_date,
   lastAirDate: data.last_air_date,
-  date: getDate(data.in_production, data.first_air_date, data.last_air_date),
+  year: getDate(data.in_production, data.first_air_date, data.last_air_date),
   duration: getDuration(data.runtime),
   backdrop_path: data.backdrop_path,
   poster_path: data.poster_path,
