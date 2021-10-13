@@ -1,0 +1,14 @@
+@use '../../../styles/variables' as v;
+
+.person-link {
+  text-decoration: none;
+}
+
+.person-name {
+  color: v.$c-white;
+  transition: all 0.1s;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

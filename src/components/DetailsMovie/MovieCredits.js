@@ -11,7 +11,7 @@ const MovieCredits = ({ movie, type }) => {
         <CastSection title="Producers by: " cast={movie.producers} />
       )}
       <CastSection title="Story by: " cast={movie.writers} />
-      <CastSection title="Starring: " cast={movie.cast} />
+      <CastSection title="Starring: " cast={movie.cast} star />
     </div>
   );
 };
