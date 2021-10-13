@@ -23,7 +23,7 @@ const MainPage = () => {
         title="Top Rated Series"
         fetchUrl={requests.fetchSeriesTopRated}
         main={false}
-        media="serie"
+        media="tv"
       />
     </div>
   );
