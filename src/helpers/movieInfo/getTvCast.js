@@ -2,7 +2,9 @@ const getDirectors = (data) => {
   return data.filter((person) => person.job === 'Director');
 };
 const getProducers = (data) => {
-  return data.filter((person) => person.job === 'Producer');
+  return data.filter(
+    (person) => person.job === 'Producer' || person.job === 'Executive Producer'
+  );
 };
 const getWriters = (data) => {
   return data.filter((person) => person.job === 'Writer');
