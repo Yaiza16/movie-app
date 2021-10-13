@@ -5,10 +5,10 @@ import './MovieTrailer.scss';
 const Trailer = ({ movie }) => {
   return (
     <div className="movie-trailer-container">
-      {movie?.movieVideo?.length >= 1 ? (
+      {movie?.video?.length >= 1 ? (
         <a
           className="button-trailer-container"
-          href={`https://www.youtube.com/watch?v=${movie.movieVideo[0].key}`}
+          href={`https://www.youtube.com/watch?v=${movie.video[0].key}`}
           target="_blank"
           rel="noreferrer"
         >
