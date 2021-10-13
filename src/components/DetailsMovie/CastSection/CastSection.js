@@ -2,7 +2,7 @@ import React from 'react';
 import './CastSection.scss';
 
 const CastSection = ({ title, cast }) => {
-  return cast.length !== 0 ? (
+  return cast && cast.length !== 0 ? (
     <div className="cast-container">
       <p className="cast-title">{title}</p>
       <p className="cast-item">

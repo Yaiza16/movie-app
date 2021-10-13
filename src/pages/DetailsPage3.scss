@@ -1,0 +1,34 @@
+@use '../styles/variables' as v;
+
+.details-page-container {
+  margin: 6rem 4rem 2rem;
+  color: v.$c-white;
+  font-family: v.$f-primary;
+  line-height: 1.5rem;
+}
+
+.details-page {
+  display: flex;
+  width: 100%;
+  height: auto;
+  gap: 5rem;
+}
+
+.info-movie-container {
+  display: inline-flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  //   width: auto;
+  height: auto;
+}
+
+.info-movie {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: v.$c-secundary;
+  border-radius: 1rem;
+  padding: 2rem;
+  gap: 0.4rem;
+}

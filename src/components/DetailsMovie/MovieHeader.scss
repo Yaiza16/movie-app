@@ -1,0 +1,38 @@
+@use '../../styles/variables' as v;
+
+.movie-header-section {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  &--second {
+    gap: 0.8rem;
+  }
+}
+
+.title-movie {
+  font-size: 2.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.movie-year {
+  color: v.$c-gray;
+}
+
+.movie-average-container {
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.movie-genres-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.movie-duration {
+  font-size: 0.8rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.2rem;
+}

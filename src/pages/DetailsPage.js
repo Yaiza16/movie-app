@@ -8,7 +8,7 @@ import { IconStar } from '../helpers/Icons';
 import GenreButton from '../components/GenreButton';
 import CastSection from '../components/CastSection/CastSection';
 import Recommendations from '../components/Recommendations/Recommendations';
-import useMovie from '../hooks/useMovie';
+import MovieHeader from '../components/DetailsMovie/MovieHeader';
 
 const baseUrlImage = 'https://image.tmdb.org/t/p/original';
 
@@ -23,23 +23,17 @@ const DetailsPage = () => {
   const [story, setStory] = useState([]);
   const [year, setYear] = useState('');
   const [duration, setDuration] = useState('');
-  const { movieNew, getNewMovie } = useMovie();
 
   useEffect(() => {
-    getNewMovie(id, 'movie');
-    console.log(movieNew);
-
     function getDuration(time) {
       const hours = Math.floor(time / 60);
       const minutes = time % 60;
       return `${hours}h ${minutes}min`;
     }
-
     async function catchMovie() {
       const request = await axios.get(
         `https://api.themoviedb.org/3/movie/${id}?api_key=9650301cf84b0f134776248aa6863452`
       );
-
       setMovie(request.data);
       const newYear = new Date(request.data.release_date);
       setYear(newYear.getFullYear());
@@ -114,14 +108,7 @@ const DetailsPage = () => {
         </div>
         <div className="details-page__inf">
           <div className="details-page__inf-movie">
-            <div className="movie-title-container">
-              <h2 className="title-movie">{movie.title}</h2>
-              <p className="movie-year">{year}</p>
-              <div className="movie-average-container">
-                <IconStar />
-                <p className="icon-average">{movie.vote_average}</p>
-              </div>
-            </div>
+            <MovieHeader movie={movie} />
             <div className="movie-second-line">
               <div className="details-container">
                 <div className="details-container__inf genres-movie">

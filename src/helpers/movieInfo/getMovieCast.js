@@ -10,11 +10,14 @@ const getWriters = (data) => {
 
 const getMovieCast = (data) => ({
   cast: data.cast,
-  crew: [
-    { directors: getDirectors(data.crew) },
-    { screenPlayers: getScreenPlayers(data.crew) },
-    { writers: getWriters(data.crew) },
-  ],
+  // crew: [
+  //   { directors: getDirectors(data.crew) },
+  //   { screenPlayers: getScreenPlayers(data.crew) },
+  //   { writers: getWriters(data.crew) },
+  // ],
+  directors: getDirectors(data.crew),
+  screenPlayers: getScreenPlayers(data.crew),
+  writers: getWriters(data.crew),
 });
 
 export default getMovieCast;

@@ -1,0 +1,12 @@
+.movie-trailer-container {
+  display: flex;
+}
+
+.button-trailer-container {
+  text-decoration: none;
+  width: auto;
+
+  &--disabled {
+    pointer-events: none;
+  }
+}

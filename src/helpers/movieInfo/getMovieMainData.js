@@ -12,9 +12,14 @@ const getDuration = (time) => {
 
 const getMovieMainData = (data) => ({
   name: data.title,
+  id: data.id,
   year: getYear(data.release_date),
   duration: getDuration(data.runtime),
   backdrop_path: data.backdrop_path,
+  poster_path: data.poster_path,
+  vote_average: data.vote_average,
+  genres: data.genres,
+  overview: data.overview,
 });
 
 export default getMovieMainData;
