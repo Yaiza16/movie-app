@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import ScrollToTop from '../hooks/ScrollToTop';
 // import DetailsPage1 from '../pages/DetailsPage1';
 import DetailsPage3 from '../pages/DetailsPage3';
-import DetailsPageSerie from '../pages/DetailsPageSerie';
+// import DetailsPageSerie from '../pages/DetailsPageSerie';
 // import DetailsPage from '../pages/DetailsPage';
 import MainPage from '../pages/MainPage';
 import MoviesPage from '../pages/MoviesPage';
@@ -39,10 +39,10 @@ const AppRouter = () => {
               <SeriesPage />
             </Route>
             <Route exact path="/category/movie/:id">
-              <DetailsPage3 />
+              <DetailsPage3 type="movie" />
             </Route>
             <Route exact path="/category/tv/:id">
-              <DetailsPageSerie />
+              <DetailsPage3 type="tv" />
             </Route>
             <Route exact path="/">
               <MainPage />
