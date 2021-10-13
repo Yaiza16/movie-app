@@ -33,6 +33,7 @@ const getTvMainData = (data) => ({
   vote_average: data.vote_average,
   genres: data.genres,
   overview: data.overview,
+  mediaType: 'tv',
 });
 
 export default getTvMainData;

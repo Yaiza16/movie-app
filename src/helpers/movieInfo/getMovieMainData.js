@@ -20,6 +20,7 @@ const getMovieMainData = (data) => ({
   vote_average: data.vote_average,
   genres: data.genres,
   overview: data.overview,
+  mediaType: 'movie',
 });
 
 export default getMovieMainData;
