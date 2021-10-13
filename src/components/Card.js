@@ -14,6 +14,11 @@ const Card = ({ movie, main, media }) => {
     // query.set('id', movie.id);
     if (media === 'all') {
       setMediaType(movie.media_type);
+      // } else {
+      //   setMediaType(media);
+      // }
+    } else if (movie.media_type) {
+      setMediaType(movie.media_type);
     } else {
       setMediaType(media);
     }
