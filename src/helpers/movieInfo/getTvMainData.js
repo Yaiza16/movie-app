@@ -9,15 +9,12 @@ const getDate = (inProduction, firstAirDate, lastAirDate) => {
   const lastYear = getYear(lastAirDate);
 
   if (inProduction) {
-    return `${firstYear} --`;
+    return `${firstYear} -`;
   }
-  return `${firstYear} -- ${lastYear}`;
-};
-
-const getDuration = (time) => {
-  const hours = Math.floor(time / 60);
-  const minutes = time % 60;
-  return `${hours}h ${minutes}min`;
+  if (firstYear === lastYear) {
+    return firstYear;
+  }
+  return `${firstYear} - ${lastYear}`;
 };
 
 const getTvMainData = (data) => ({
@@ -27,7 +24,6 @@ const getTvMainData = (data) => ({
   firstAirDate: data.first_air_date,
   lastAirDate: data.last_air_date,
   year: getDate(data.in_production, data.first_air_date, data.last_air_date),
-  duration: getDuration(data.runtime),
   backdrop_path: data.backdrop_path,
   poster_path: data.poster_path,
   vote_average: data.vote_average,
