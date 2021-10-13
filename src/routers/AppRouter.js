@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from '../components/Header';
 import ScrollToTop from '../hooks/ScrollToTop';
 // import DetailsPage1 from '../pages/DetailsPage1';
-import DetailsPage3 from '../pages/DetailsPage3';
+import DetailsPage from '../pages/DetailsPage';
 // import DetailsPageSerie from '../pages/DetailsPageSerie';
 // import DetailsPage from '../pages/DetailsPage';
 import MainPage from '../pages/MainPage';
@@ -39,10 +39,10 @@ const AppRouter = () => {
               <SeriesPage />
             </Route>
             <Route exact path="/category/movie/:id">
-              <DetailsPage3 type="movie" />
+              <DetailsPage type="movie" />
             </Route>
             <Route exact path="/category/tv/:id">
-              <DetailsPage3 type="tv" />
+              <DetailsPage type="tv" />
             </Route>
             <Route exact path="/">
               <MainPage />
