@@ -5,7 +5,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 
 const axiosRecommendations = async (id, type) => {
   const res = await axios.get(
-    `${baseRequest.baseApiCall}/${type}/${id}/recommendations?api_key=${API_KEY}`
+    `${baseRequest}/${type}/${id}/recommendations?api_key=${API_KEY}`
   );
 
   const { data } = res;

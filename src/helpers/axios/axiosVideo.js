@@ -5,7 +5,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 
 const axiosVideo = async (id, type) => {
   const res = await axios.get(
-    `${baseRequest.baseApiCall}/${type}/${id}/videos?api_key=${API_KEY}`
+    `${baseRequest}/${type}/${id}/videos?api_key=${API_KEY}`
   );
 
   const { data } = res;
