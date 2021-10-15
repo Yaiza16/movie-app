@@ -1,0 +1,14 @@
+@use '../styles/variables' as v;
+
+.details-page {
+  &--person {
+    background-color: v.$c-secundary;
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+}
+
+.details-page-main {
+  display: flex;
+  gap: 1rem;
+}
