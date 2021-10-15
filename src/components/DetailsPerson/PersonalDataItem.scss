@@ -1,0 +1,10 @@
+@use '../../styles/variables' as v;
+
+.personal-data-title {
+  display: inline;
+  color: v.$c-gray;
+}
+
+.personal-data-info {
+  display: inline;
+}
