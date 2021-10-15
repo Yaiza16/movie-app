@@ -8,6 +8,7 @@ import DetailsPage from '../pages/DetailsPage';
 // import DetailsPage from '../pages/DetailsPage';
 import MainPage from '../pages/MainPage';
 import MoviesPage from '../pages/MoviesPage';
+import PersonPage from '../pages/PersonPage';
 import SeriesPage from '../pages/SeriesPage';
 
 const AppRouter = () => {
@@ -45,7 +46,7 @@ const AppRouter = () => {
               <DetailsPage type="tv" />
             </Route>
             <Route exact path="/person/:id">
-              <h1>PERSONA</h1>
+              <PersonPage />
             </Route>
             <Route exact path="/">
               <MainPage />
