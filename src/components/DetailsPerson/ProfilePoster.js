@@ -1,4 +1,5 @@
 import React from 'react';
+import './ProfilePoster.scss';
 
 const ProfilePoster = ({ person }) => {
   return (
