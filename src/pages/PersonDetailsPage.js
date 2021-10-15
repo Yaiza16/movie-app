@@ -7,7 +7,7 @@ import usePerson from '../hooks/usePerson';
 
 import './PersonPage.scss';
 
-const PersonPage = () => {
+const PersonDetailsPage = () => {
   const { id } = useParams();
   const [person, setPerson] = useState([]);
   const { getNewPerson } = usePerson();
@@ -33,4 +33,4 @@ const PersonPage = () => {
   );
 };
 
-export default PersonPage;
+export default PersonDetailsPage;
