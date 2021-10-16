@@ -1,6 +1,6 @@
 const filterRecommendations = (data) => {
   const notRecommendations = [
-    562, 59941, 2224, 1900, 1220, 1489, 1667, 62223, 63770, 4573,
+    562, 59941, 2224, 1900, 1220, 1489, 1667, 62223, 63770, 4573, 6809,
   ];
   const recommendations = data.filter(
     (item) => !notRecommendations.includes(item.id)
