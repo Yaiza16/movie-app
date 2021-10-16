@@ -9,6 +9,7 @@ import DetailsPage from '../pages/DetailsPage';
 import MainPage from '../pages/MainPage';
 import MoviesPage from '../pages/MoviesPage';
 import PersonDetailsPage from '../pages/PersonDetailsPage';
+import SearchPage from '../pages/SearchPage';
 import SeriesPage from '../pages/SeriesPage';
 
 const AppRouter = () => {
@@ -31,7 +32,7 @@ const AppRouter = () => {
         ) : (
           <Switch>
             <Route path="/search">
-              <h1>Search</h1>
+              <SearchPage />
             </Route>
             <Route path="/movies">
               <MoviesPage />
