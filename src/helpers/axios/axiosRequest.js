@@ -8,4 +8,12 @@ const axiosRequest = async (id, type, variable = null) => {
   return data;
 };
 
+export const axiosRequestMulti = async (query) => {
+  const res = await TmdbApi.get(`/search/multi`, {
+    params: { query: `${query}` },
+  });
+  const { result } = res;
+  return result;
+};
+
 export default axiosRequest;
