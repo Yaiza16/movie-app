@@ -3,9 +3,10 @@ import './Form.scss';
 import { useHistory } from 'react-router-dom';
 import { IconClose, IconSearch } from '../helpers/Icons';
 
-const Form = () => {
+const Form = ({ setMultiSearch }) => {
   const [expandedForm, setExpandedForm] = useState(false);
   const history = useHistory();
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     if (expandedForm) {
@@ -17,6 +18,12 @@ const Form = () => {
 
   const handleForm = () => {
     setExpandedForm((value) => !value);
+  };
+
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+    console.log(search);
+    setMultiSearch(e.target.value);
   };
 
   return (
@@ -31,6 +38,7 @@ const Form = () => {
           required
           placeholder="Search..."
           autoComplete="off"
+          onChange={handleChange}
         />
 
         <button
