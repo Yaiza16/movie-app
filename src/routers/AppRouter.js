@@ -14,6 +14,7 @@ import SeriesPage from '../pages/SeriesPage';
 
 const AppRouter = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [multiSearch, setMultiSearch] = useState('');
 
   const handleLoading = () => {
     setIsLoading(false);
@@ -26,13 +27,13 @@ const AppRouter = () => {
   return (
     <Router>
       <ScrollToTop>
-        <Header />
+        <Header setMultiSearch={(multiSearch, setMultiSearch)} />
         {isLoading ? (
           <h1>Hola</h1>
         ) : (
           <Switch>
             <Route path="/search">
-              <SearchPage />
+              <SearchPage multiSearch={multiSearch} />
             </Route>
             <Route path="/movies">
               <MoviesPage />
