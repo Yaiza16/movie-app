@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
 import axios from 'axios';
 import requests from '../helpers/requests';
 import './Hero.scss';
@@ -42,7 +44,9 @@ const Hero = () => {
       <div className="hero-inf">
         <h1 className="hero-inf__title">{movie.name || movie.original_name}</h1>
         <p className="hero-inf__overview">{movie.overview}</p>
-        <Button text="See details" />
+        <Link to={`/category/tv/${movie.id}`} className="button-link">
+          <Button text="See details" className="button" />
+        </Link>
       </div>
     </div>
   );
