@@ -28,7 +28,7 @@
   // Add font-family
   //Do font-size bigger
 
-  &--opened {
+  &:focus {
     border: 1px solid v.$c-gray;
     border-radius: 1rem;
     padding-left: 2.5rem;
