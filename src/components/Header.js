@@ -4,7 +4,7 @@ import IconMovie from '../helpers/Icons';
 import Form from './Form';
 import './Header.scss';
 
-const Header = () => {
+const Header = ({ multiSearch, setMultiSearch }) => {
   const [header, setHeader] = useState(false);
 
   const headerFixed = () => {
@@ -44,7 +44,7 @@ const Header = () => {
           </NavLink>
         </li>
       </ul>
-      <Form />
+      <Form setMultiSearch={(multiSearch, setMultiSearch)} />
     </header>
   );
 };
