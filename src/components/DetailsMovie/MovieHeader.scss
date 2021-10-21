@@ -7,6 +7,12 @@
   align-items: center;
   margin-bottom: 1rem;
 
+  &__part-two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   &--second {
     gap: 0.8rem;
     margin-bottom: unset;

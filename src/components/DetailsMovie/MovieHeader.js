@@ -8,10 +8,12 @@ const MovieHeader = ({ movie, type }) => {
     <div className="movie-header-container">
       <div className="movie-header-section">
         <h2 className="title-movie">{movie.name}</h2>
-        <p className="movie-year">{movie.year}</p>
-        <div className="movie-average-container">
-          <IconStar />
-          <p className="movie-average">{movie.vote_average}</p>
+        <div className="movie-header-section__part-two">
+          <p className="movie-year">{movie.year}</p>
+          <div className="movie-average-container">
+            <IconStar />
+            <p className="movie-average">{movie.vote_average}</p>
+          </div>
         </div>
       </div>
 
