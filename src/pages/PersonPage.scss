@@ -1,4 +1,5 @@
 @use '../styles/variables' as v;
+@use '../styles/mixins' as m;
 
 .details-page {
   &--person {
@@ -13,4 +14,9 @@
 .details-page-main {
   display: flex;
   gap: 1rem;
+
+  @include m.mq('lg') {
+    flex-direction: column;
+    align-items: center;
+  }
 }

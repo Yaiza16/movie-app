@@ -1,7 +1,24 @@
+@use '../../styles/mixins' as m;
+
 .profile-img-container {
   width: 250px;
   height: 300px;
   flex: 0 0 auto;
+
+  @include m.mq('lg') {
+    width: 350px;
+    height: 420px;
+  }
+
+  @include m.mq('sm') {
+    width: 250px;
+    height: 300px;
+  }
+
+  @include m.mq('xsm') {
+    width: 200px;
+    height: 240px;
+  }
 }
 
 .profile-img {
