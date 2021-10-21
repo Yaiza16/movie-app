@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 import ScrollToTop from '../hooks/ScrollToTop';
 import DetailsPage from '../pages/DetailsPage';
@@ -39,6 +40,7 @@ const AppRouter = () => {
             <MainPage />
           </Route>
         </Switch>
+        <Footer />
       </ScrollToTop>
     </Router>
   );
