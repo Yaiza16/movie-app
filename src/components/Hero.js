@@ -12,8 +12,6 @@ const Hero = () => {
 
   useEffect(() => {
     const fecthData = async () => {
-      console.log('is loading?');
-
       const request = await axios.get(requests.fetchSeriesPopularity);
       const lengthRequest = request.data.results.length;
       let optionRandom;
