@@ -1,13 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// import ContentLoader, { Facebook } from 'react-content-loader';
 import Header from '../components/Header';
-// import LoadingPlaceholder from '../components/Loading/LoadingPlaceholder';
 import ScrollToTop from '../hooks/ScrollToTop';
-// import DetailsPage1 from '../pages/DetailsPage1';
 import DetailsPage from '../pages/DetailsPage';
-// import DetailsPageSerie from '../pages/DetailsPageSerie';
-// import DetailsPage from '../pages/DetailsPage';
 import MainPage from '../pages/MainPage';
 import MoviesPage from '../pages/MoviesPage';
 import PersonDetailsPage from '../pages/PersonDetailsPage';
