@@ -29,6 +29,7 @@ const Slider = ({ title, fetchUrl, main, media }) => {
       <Swiper
         slidesPerView="auto"
         slidesPerGroup={1}
+        speed={600}
         breakpoints={{
           // when window width is >= 320px
           500: {
