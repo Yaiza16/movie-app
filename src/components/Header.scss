@@ -84,3 +84,12 @@
     }
   }
 }
+
+.icon-header {
+  color: v.$c-white;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: v.$c-red;
+  }
+}
