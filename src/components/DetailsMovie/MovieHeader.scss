@@ -7,6 +7,11 @@
   align-items: center;
   margin-bottom: 1rem;
 
+  @include m.mq('md') {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   &__part-two {
     display: flex;
     justify-content: center;
