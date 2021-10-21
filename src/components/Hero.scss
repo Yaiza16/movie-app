@@ -1,4 +1,5 @@
 @use './../styles/variables' as v;
+@use '../styles/mixins' as m;
 
 .loading-container-hero {
   width: 100%;
@@ -38,10 +39,10 @@
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100%;
+  width: 60%;
 
-  & {
-    width: 60%;
+  @include m.mq('lg') {
+    width: 80%;
   }
 
   &__title {
@@ -55,6 +56,15 @@
   &__overview {
     color: v.$c-white;
     line-height: 1.3;
+
+    @include m.mq('md') {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 6; /* number of lines to show */
+      -webkit-box-orient: vertical;
+      visibility: visible;
+    }
   }
 }
 
