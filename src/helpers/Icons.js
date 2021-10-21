@@ -3,7 +3,7 @@ import { IconContext } from 'react-icons';
 import { BiCameraMovie, BiSearch, BiX } from 'react-icons/bi';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import { CgDetailsMore } from 'react-icons/cg';
-import { AiFillStar } from 'react-icons/ai';
+import { AiFillStar, AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { RiMovieLine } from 'react-icons/ri';
 
 const IconMovie = () => (
@@ -51,6 +51,18 @@ export const IconStar = () => (
 export const IconRun = () => (
   <IconContext.Provider value={{ size: '20px', color: '#1a1a1a' }}>
     <RiMovieLine />
+  </IconContext.Provider>
+);
+
+export const IconGithub = () => (
+  <IconContext.Provider value={{ size: '30px', className: 'icon-footer' }}>
+    <AiFillGithub />
+  </IconContext.Provider>
+);
+
+export const IconLinkedin = () => (
+  <IconContext.Provider value={{ size: '30px', className: 'icon-footer' }}>
+    <AiFillLinkedin />
   </IconContext.Provider>
 );
 
