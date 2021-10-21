@@ -28,7 +28,25 @@ const Slider = ({ title, fetchUrl, main, media }) => {
       <h2 className="title-slider">{title}</h2>
       <Swiper
         slidesPerView="auto"
-        slidesPerGroup={6}
+        slidesPerGroup={1}
+        breakpoints={{
+          // when window width is >= 320px
+          500: {
+            slidesPerGroup: 2,
+          },
+          750: {
+            slidesPerGroup: 3,
+          },
+          950: {
+            slidesPerGroup: 4,
+          },
+          1130: {
+            slidesPerGroup: 5,
+          },
+          1350: {
+            slidesPerGroup: 6,
+          },
+        }}
         navigation={{
           nextEl: '.arrow-slider--right',
           prevEl: '.arrow-slider--left',
