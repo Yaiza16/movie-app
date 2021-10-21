@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
 import axios from 'axios';
 import requests from '../helpers/requests';
 import './Hero.scss';
@@ -13,13 +12,14 @@ const Hero = () => {
 
   useEffect(() => {
     const fecthData = async () => {
+      console.log('is loading?');
+
       const request = await axios.get(requests.fetchSeriesPopularity);
       const lengthRequest = request.data.results.length;
       let optionRandom;
       let option;
       do {
         optionRandom = Math.floor(Math.random() * lengthRequest - 1);
-        // option = request.data.results[optionRandom].backdrop_path || null;
         if (request?.data?.results[optionRandom]?.backdrop_path === undefined) {
           option = null;
         } else {
@@ -27,7 +27,6 @@ const Hero = () => {
         }
       } while (option === null);
       getMovie(request.data.results[optionRandom]);
-      console.log(request.data.results[optionRandom]);
     };
     fecthData();
   }, []);
