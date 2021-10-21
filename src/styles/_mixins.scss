@@ -1,3 +1,13 @@
+@use 'variables' as v;
+
 @mixin general-padding {
   padding: 1.5rem 2rem;
+}
+
+@mixin mq($key) {
+  $size: map-get(v.$media-query, $key);
+
+  @media only screen and (max-width: $size) {
+    @content;
+  }
 }
