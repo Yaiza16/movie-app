@@ -1,0 +1,51 @@
+@use '../styles/variables' as v;
+@use '../styles/mixins' as m;
+
+.footer-site {
+  margin-top: 2rem;
+  background-color: v.$c-secundary;
+  width: 100%;
+  padding: 1rem 0;
+
+  @include m.mq('md') {
+    padding: 1.5rem 0;
+  }
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+
+  @include m.mq('md') {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
+.footer-copyright {
+  color: rgba(v.$c-white, 0.8);
+  font-size: 0.8rem;
+
+  @include m.mq('md') {
+    order: 2;
+  }
+}
+
+.footer-social-container {
+  display: flex;
+  gap: 1.5rem;
+
+  @include m.mq('md') {
+    order: 1;
+  }
+}
+
+.icon-footer {
+  color: v.$c-white;
+  transition: color 0.2s ease-in;
+  &:hover {
+    color: v.$c-red;
+  }
+}
