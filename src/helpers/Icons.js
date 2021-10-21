@@ -13,13 +13,13 @@ const IconMovie = () => (
 );
 
 export const IconSearch = () => (
-  <IconContext.Provider value={{ size: '32px', color: '#f6f6f6' }}>
+  <IconContext.Provider value={{ size: '32px', className: 'icon-header' }}>
     <BiSearch />
   </IconContext.Provider>
 );
 
 export const IconClose = () => (
-  <IconContext.Provider value={{ size: '32px', color: '#f6f6f6' }}>
+  <IconContext.Provider value={{ size: '32px', className: 'icon-header' }}>
     <BiX />
   </IconContext.Provider>
 );
