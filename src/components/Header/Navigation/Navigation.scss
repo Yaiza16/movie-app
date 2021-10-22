@@ -1,0 +1,82 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as m;
+
+.nav {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1rem;
+  flex: 1 1 auto;
+  padding: 0 3rem;
+
+  @include m.mq('md') {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: v.$c-black;
+    z-index: 2;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 8rem 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  &--active {
+    transform: translateX(0%);
+  }
+
+  &__item {
+    font-weight: 300;
+    font-size: 1.2rem;
+    font-family: v.$f-secundary;
+    position: relative;
+
+    @include m.mq('md') {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 0.7rem;
+    }
+  }
+
+  &__link {
+    color: v.$c-white;
+    text-decoration: none;
+    transition: color 0.3s linear;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      border-radius: 0.2rem;
+      background-color: v.$c-red;
+      width: 100%;
+      bottom: -0.5rem;
+      display: block;
+      transform: rotateY(90deg);
+      transition: transform 0.2s linear;
+    }
+
+    &:hover {
+      color: v.$c-red;
+
+      &::after {
+        transform: rotateY(0deg);
+      }
+    }
+
+    &--active {
+      font-weight: 500;
+
+      &:hover {
+        color: v.$c-white;
+
+        &::after {
+          transform: rotateY(90deg);
+        }
+      }
+    }
+  }
+}

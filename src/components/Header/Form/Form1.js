@@ -1,41 +1,29 @@
-import React, { useState, useEffect, useRef } from 'react';
-// import './Form.scss';
+import React, { useEffect, useRef } from 'react';
+import './Form.scss';
 import { useHistory } from 'react-router-dom';
 import { IconClose, IconSearch } from '../../../helpers/Icons';
+import './Form1.scss';
 
-const Form = ({ multiSearch, setMultiSearch }) => {
-  const [expandedForm, setExpandedForm] = useState(false);
-  const history = useHistory();
-  // const [search, setSearch] = useState('');
+const Form1 = ({ expandedForm, setExpandedForm, setMultiSearch }) => {
+  // const history = useHistory();
   const inputRef = useRef();
+  const history = useHistory();
 
   useEffect(() => {
     if (expandedForm) {
       history.push('/search');
-      console.log(multiSearch);
-      inputRef.current.focus();
     } else {
       history.push('/');
     }
-  }, [expandedForm, history]);
+  }, [expandedForm]);
 
   const handleFormOpen = () => {
-    if (expandedForm === true) {
-      history.push('/search');
-      inputRef.current.value = '';
-      setMultiSearch('');
-    }
-
     setExpandedForm(true);
+    console.log(expandedForm);
     inputRef.current.focus();
   };
 
-  const handleFormClose = (e) => {
-    history.push('/');
-    e.target.classList.remove('icon-container--closeIsOpened');
-    console.log('Hola');
-    inputRef.current.value = '';
-    setMultiSearch('');
+  const handleFormClose = () => {
     setExpandedForm(false);
   };
 
@@ -43,8 +31,6 @@ const Form = ({ multiSearch, setMultiSearch }) => {
     console.log(inputRef.current.value.length);
     setMultiSearch(e.target.value);
   };
-
-  // const handleFocus = () => setExpandedForm(false);
 
   return (
     <form className="form-search">
@@ -70,20 +56,18 @@ const Form = ({ multiSearch, setMultiSearch }) => {
           <IconSearch />
         </button>
 
-        <button
-          className={
-            expandedForm
-              ? `icon-container icon-container--close icon-container--closeIsOpened`
-              : `icon-container icon-container--close`
-          }
-          type="button"
-          onClick={handleFormClose}
-        >
-          <IconClose />
-        </button>
+        {expandedForm ? (
+          <button
+            className="icon-container icon-container--close"
+            type="button"
+            onClick={handleFormClose}
+          >
+            <IconClose />
+          </button>
+        ) : null}
       </div>
     </form>
   );
 };
 
-export default Form;
+export default Form1;

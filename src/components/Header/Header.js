@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import IconMovie from '../../helpers/Icons';
-import Form from './Form/Form';
+// import Form from './Form/Form';
+import Form1 from './Form/Form1';
 import './Header.scss';
 import NavMobile from './NavMobile/NavMobile';
+import Navigation from './Navigation/Navigation';
 
-const Header = ({ multiSearch, setMultiSearch }) => {
+const Header = ({ setMultiSearch }) => {
   const [header, setHeader] = useState(false);
   const [isNavMobileOpened, setIsNavMobileOpened] = useState(false);
+  const [expandedForm, setExpandedForm] = useState(false);
 
   const headerFixed = () => {
     if (window.scrollY > 1) {
@@ -20,35 +23,27 @@ const Header = ({ multiSearch, setMultiSearch }) => {
   window.addEventListener('scroll', headerFixed);
   return (
     <header className={header ? 'header header--background' : 'header'}>
-      <NavLink to="/" className="nav-link-logo">
+      <NavLink
+        to="/"
+        className="nav-link-logo"
+        onClick={() => setExpandedForm(false)}
+      >
         <div className="logo">
           <IconMovie />
           <h1 className="logo__name-site">Tuumex</h1>
         </div>
       </NavLink>
-      <ul className={isNavMobileOpened ? 'nav nav--active' : 'nav'}>
-        <li className="nav__item">
-          <NavLink
-            to="/movies"
-            className="nav__link"
-            activeClassName="nav__link--active"
-            onClick={() => setIsNavMobileOpened(false)}
-          >
-            Movies
-          </NavLink>
-        </li>
-        <li className="nav__item">
-          <NavLink
-            to="/series"
-            className="nav__link"
-            activeClassName="nav__link--active"
-            onClick={() => setIsNavMobileOpened(false)}
-          >
-            Series
-          </NavLink>
-        </li>
-      </ul>
-      <Form setMultiSearch={(multiSearch, setMultiSearch)} />
+      {expandedForm ? null : (
+        <Navigation
+          isNavMobileOpened={isNavMobileOpened}
+          setIsNavMobileOpened={setIsNavMobileOpened}
+        />
+      )}
+      <Form1
+        setMultiSearch={setMultiSearch}
+        expandedForm={expandedForm}
+        setExpandedForm={setExpandedForm}
+      />
       <NavMobile
         isNavMobileOpened={isNavMobileOpened}
         setIsNavMobileOpened={setIsNavMobileOpened}
