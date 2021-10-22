@@ -26,6 +26,10 @@
 .logo {
   display: flex;
 
+  @include m.mq('md') {
+    margin-right: 2rem;
+  }
+
   &__name-site {
     color: v.$c-white;
   }
@@ -44,8 +48,14 @@
     right: 0;
     top: 0;
     height: 100vh;
+    width: 80%;
     background-color: v.$c-black;
     z-index: 2;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 8rem 0;
+
+    transform: translateX(100%);
   }
 
   &__item {
@@ -53,6 +63,12 @@
     font-size: 1.2rem;
     font-family: v.$f-secundary;
     position: relative;
+
+    @include m.mq('md') {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 0.7rem;
+    }
   }
 
   &__link {
