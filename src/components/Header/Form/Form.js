@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Form.scss';
 import { useHistory } from 'react-router-dom';
-import { IconClose, IconSearch } from '../helpers/Icons';
+import { IconClose, IconSearch } from '../../../helpers/Icons';
 
 const Form = ({ multiSearch, setMultiSearch }) => {
   const [expandedForm, setExpandedForm] = useState(false);

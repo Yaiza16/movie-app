@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import IconMovie from '../helpers/Icons';
-import Form from './Form';
+import IconMovie from '../../helpers/Icons';
+import Form from './Form/Form';
 import './Header.scss';
 
 const Header = ({ multiSearch, setMultiSearch }) => {

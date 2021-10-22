@@ -1,5 +1,5 @@
 import React from 'react';
-import Hero from '../components/Hero';
+import Hero from '../components/Hero/Hero';
 import Slider from '../components/Slider';
 import requests from '../helpers/requests';
 
