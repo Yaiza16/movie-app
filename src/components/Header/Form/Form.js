@@ -1,57 +1,48 @@
-import React, { useState, useEffect, useRef } from 'react';
-// import './Form.scss';
+import React, { useEffect, useContext, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import { IconClose, IconSearch } from '../../../helpers/Icons';
+import './Form.scss';
+import FormContext from '../../../contexts/FormContext';
 
-const Form = ({ multiSearch, setMultiSearch }) => {
-  const [expandedForm, setExpandedForm] = useState(false);
-  const history = useHistory();
-  // const [search, setSearch] = useState('');
+const Form = ({ setMultiSearch }) => {
   const inputRef = useRef();
+  const history = useHistory();
+  const { isExpandedForm, setIsExpandedForm } = useContext(FormContext);
 
   useEffect(() => {
-    if (expandedForm) {
-      history.push('/search');
-      console.log(multiSearch);
-      inputRef.current.focus();
-    } else {
-      history.push('/');
-    }
-  }, [expandedForm, history]);
-
-  const handleFormOpen = () => {
-    if (expandedForm === true) {
-      history.push('/search');
+    if (!isExpandedForm) {
       inputRef.current.value = '';
       setMultiSearch('');
     }
+  }, [isExpandedForm, setMultiSearch]);
 
-    setExpandedForm(true);
+  const handleFormOpen = () => {
+    setIsExpandedForm(true);
     inputRef.current.focus();
+    history.push('/search');
   };
 
-  const handleFormClose = (e) => {
+  const handleFormClose = () => {
+    setIsExpandedForm(false);
     history.push('/');
-    e.target.classList.remove('icon-container--closeIsOpened');
-    console.log('Hola');
-    inputRef.current.value = '';
-    setMultiSearch('');
-    setExpandedForm(false);
   };
 
   const handleChange = (e) => {
-    console.log(inputRef.current.value.length);
     setMultiSearch(e.target.value);
   };
 
-  // const handleFocus = () => setExpandedForm(false);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
-    <form className="form-search">
+    <form className="form-search" onSubmit={handleSubmit}>
       <div className="input-container">
         <input
           className={
-            expandedForm ? `input-search input-search--opened` : `input-search`
+            isExpandedForm
+              ? `input-search input-search--opened`
+              : `input-search`
           }
           ref={inputRef}
           type="text"
@@ -70,17 +61,15 @@ const Form = ({ multiSearch, setMultiSearch }) => {
           <IconSearch />
         </button>
 
-        <button
-          className={
-            expandedForm
-              ? `icon-container icon-container--close icon-container--closeIsOpened`
-              : `icon-container icon-container--close`
-          }
-          type="button"
-          onClick={handleFormClose}
-        >
-          <IconClose />
-        </button>
+        {isExpandedForm ? (
+          <button
+            className="icon-container icon-container--close"
+            type="button"
+            onClick={handleFormClose}
+          >
+            <IconClose />
+          </button>
+        ) : null}
       </div>
     </form>
   );

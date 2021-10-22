@@ -1,8 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import IconMovie from '../../helpers/Icons';
-// import Form from './Form/Form';
-import Form1 from './Form/Form1';
+import Form from './Form/Form';
 import './Header.scss';
 import NavMobile from './NavMobile/NavMobile';
 import Navigation from './Navigation/Navigation';
@@ -41,7 +40,7 @@ const Header = ({ setMultiSearch }) => {
           setIsNavMobileOpened={setIsNavMobileOpened}
         />
       )}
-      <Form1 setMultiSearch={setMultiSearch} />
+      <Form setMultiSearch={setMultiSearch} />
       {!isExpandedForm ? (
         <NavMobile
           isNavMobileOpened={isNavMobileOpened}
