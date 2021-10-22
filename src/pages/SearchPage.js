@@ -27,16 +27,13 @@ const SearchPage = ({ multiSearch }) => {
         if (cards.length === 0) {
           setErrorMsg('Not data found');
         }
-        // else {
-        //   setErrorMsg('Typing your search');
-        // }
       };
       getNewSearch(multiSearch);
     } else {
       setCards([]);
       setErrorMsg('Typing your search');
     }
-  }, [multiSearch]);
+  }, [multiSearch, cards]);
 
   return (
     <div className="search-page-container">
