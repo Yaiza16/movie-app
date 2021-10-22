@@ -15,7 +15,7 @@ const SearchPage = ({ multiSearch }) => {
 
   useEffect(() => {
     console.log(multiSearch);
-    if (multiSearch.length > 3) {
+    if (multiSearch.length > 2) {
       const getNewSearch = async (query) => {
         const newSearch = await axiosRequestMulti(query);
         const { results } = newSearch;
