@@ -42,10 +42,12 @@ const Header = ({ setMultiSearch }) => {
         />
       )}
       <Form1 setMultiSearch={setMultiSearch} />
-      <NavMobile
-        isNavMobileOpened={isNavMobileOpened}
-        setIsNavMobileOpened={setIsNavMobileOpened}
-      />
+      {!isExpandedForm ? (
+        <NavMobile
+          isNavMobileOpened={isNavMobileOpened}
+          setIsNavMobileOpened={setIsNavMobileOpened}
+        />
+      ) : null}
     </header>
   );
 };
