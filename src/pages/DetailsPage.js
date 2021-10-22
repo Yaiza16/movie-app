@@ -29,7 +29,7 @@ const DetailsPage = ({ type }) => {
       setMovie(data);
     };
     getInformation();
-  }, [id]);
+  }, [id, getNewMovie, getNewTv, type]);
 
   return (
     <div className="details-page-container">
