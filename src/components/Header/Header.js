@@ -32,6 +32,7 @@ const Header = ({ multiSearch, setMultiSearch }) => {
             to="/movies"
             className="nav__link"
             activeClassName="nav__link--active"
+            onClick={() => setIsNavMobileOpened(false)}
           >
             Movies
           </NavLink>
@@ -41,6 +42,7 @@ const Header = ({ multiSearch, setMultiSearch }) => {
             to="/series"
             className="nav__link"
             activeClassName="nav__link--active"
+            onClick={() => setIsNavMobileOpened(false)}
           >
             Series
           </NavLink>
