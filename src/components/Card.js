@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import './Card.scss';
 import { SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
+import FormContext from '../contexts/FormContext';
 
 const baseUrlImage = 'https://image.tmdb.org/t/p/original';
 
 const Card = ({ movie, main, media }) => {
   const [mediaType, setMediaType] = useState('');
-  // const location = useLocation();
-  // const query = new URLSearchParams(location.search);
+  const { setIsExpandedForm } = useContext(FormContext);
 
   useEffect(() => {
     // query.set('id', movie.id);
@@ -25,7 +25,10 @@ const Card = ({ movie, main, media }) => {
   }, []);
 
   return (
-    <Link to={`/category/${mediaType}/${movie.id}`}>
+    <Link
+      to={`/category/${mediaType}/${movie.id}`}
+      onClick={() => setIsExpandedForm(false)}
+    >
       <div className="swipper-wrapped">
         {main ? (
           <SwiperSlide className="movie-card-container">

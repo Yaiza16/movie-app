@@ -1,34 +1,29 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import './Form.scss';
 import { useHistory } from 'react-router-dom';
 import { IconClose, IconSearch } from '../../../helpers/Icons';
 import './Form1.scss';
+import FormContext from '../../../contexts/FormContext';
 
-const Form1 = ({ expandedForm, setExpandedForm, setMultiSearch }) => {
-  // const history = useHistory();
+const Form1 = ({ setMultiSearch }) => {
   const inputRef = useRef();
   const history = useHistory();
-
-  useEffect(() => {
-    if (expandedForm) {
-      history.push('/search');
-    } else {
-      history.push('/');
-    }
-  }, [expandedForm]);
+  const { isExpandedForm, setIsExpandedForm } = useContext(FormContext);
 
   const handleFormOpen = () => {
-    setExpandedForm(true);
-    console.log(expandedForm);
+    setIsExpandedForm(true);
     inputRef.current.focus();
+    history.push('/search');
   };
 
   const handleFormClose = () => {
-    setExpandedForm(false);
+    setIsExpandedForm(false);
+    history.push('/');
+    inputRef.current.value = '';
+    setMultiSearch('');
   };
 
   const handleChange = (e) => {
-    console.log(inputRef.current.value.length);
     setMultiSearch(e.target.value);
   };
 
@@ -37,7 +32,9 @@ const Form1 = ({ expandedForm, setExpandedForm, setMultiSearch }) => {
       <div className="input-container">
         <input
           className={
-            expandedForm ? `input-search input-search--opened` : `input-search`
+            isExpandedForm
+              ? `input-search input-search--opened`
+              : `input-search`
           }
           ref={inputRef}
           type="text"
@@ -56,7 +53,7 @@ const Form1 = ({ expandedForm, setExpandedForm, setMultiSearch }) => {
           <IconSearch />
         </button>
 
-        {expandedForm ? (
+        {isExpandedForm ? (
           <button
             className="icon-container icon-container--close"
             type="button"
