@@ -49,7 +49,10 @@ const Header = ({ multiSearch, setMultiSearch }) => {
         </li>
       </ul>
       <Form setMultiSearch={(multiSearch, setMultiSearch)} />
-      <NavMobile setIsNavMobileOpened={setIsNavMobileOpened} />
+      <NavMobile
+        isNavMobileOpened={isNavMobileOpened}
+        setIsNavMobileOpened={setIsNavMobileOpened}
+      />
     </header>
   );
 };
