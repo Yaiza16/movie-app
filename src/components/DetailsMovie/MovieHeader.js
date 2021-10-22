@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconStar } from '../../helpers/Icons';
-import GenreButton from '../GenreButton';
+import GenreItem from './GenreItem';
 import './MovieHeader.scss';
 
 const MovieHeader = ({ movie, type }) => {
@@ -20,7 +20,7 @@ const MovieHeader = ({ movie, type }) => {
       <div className="movie-header-section movie-header-section--second">
         <div className="movie-genres-container">
           {movie.genres &&
-            movie.genres.map((genre) => <GenreButton text={genre.name} />)}
+            movie.genres.map((genre) => <GenreItem text={genre.name} />)}
         </div>
         {/* <div className="movie-duration-container"> */}
         {type === 'movie' ? (

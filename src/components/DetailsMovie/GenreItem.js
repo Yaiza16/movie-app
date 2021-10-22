@@ -1,5 +1,5 @@
 import React from 'react';
-import './GenreButton.scss';
+import './GenreItem.scss';
 
 const GenreButton = ({ text }) => {
   return (
