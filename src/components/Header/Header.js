@@ -7,6 +7,7 @@ import NavMobile from './NavMobile/NavMobile';
 
 const Header = ({ multiSearch, setMultiSearch }) => {
   const [header, setHeader] = useState(false);
+  const [isNavMobileOpened, setIsNavMobileOpened] = useState(false);
 
   const headerFixed = () => {
     if (window.scrollY > 1) {
@@ -25,7 +26,7 @@ const Header = ({ multiSearch, setMultiSearch }) => {
           <h1 className="logo__name-site">Tuumex</h1>
         </div>
       </NavLink>
-      <ul className="nav">
+      <ul className={isNavMobileOpened ? 'nav nav--active' : 'nav'}>
         <li className="nav__item">
           <NavLink
             to="/movies"
@@ -46,7 +47,7 @@ const Header = ({ multiSearch, setMultiSearch }) => {
         </li>
       </ul>
       <Form setMultiSearch={(multiSearch, setMultiSearch)} />
-      <NavMobile />
+      <NavMobile setIsNavMobileOpened={setIsNavMobileOpened} />
     </header>
   );
 };
