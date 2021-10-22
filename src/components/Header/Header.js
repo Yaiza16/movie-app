@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import IconMovie from '../../helpers/Icons';
 import Form from './Form/Form';
 import './Header.scss';
+import NavMobile from './NavMobile/NavMobile';
 
 const Header = ({ multiSearch, setMultiSearch }) => {
   const [header, setHeader] = useState(false);
@@ -45,6 +46,7 @@ const Header = ({ multiSearch, setMultiSearch }) => {
         </li>
       </ul>
       <Form setMultiSearch={(multiSearch, setMultiSearch)} />
+      <NavMobile />
     </header>
   );
 };
