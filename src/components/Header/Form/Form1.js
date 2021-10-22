@@ -27,8 +27,12 @@ const Form1 = ({ setMultiSearch }) => {
     setMultiSearch(e.target.value);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
-    <form className="form-search">
+    <form className="form-search" onSubmit={handleSubmit}>
       <div className="input-container">
         <input
           className={
