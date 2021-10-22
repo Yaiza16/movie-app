@@ -14,7 +14,6 @@ const SearchPage = ({ multiSearch }) => {
   };
 
   useEffect(() => {
-    console.log(multiSearch);
     if (multiSearch.length > 2) {
       const getNewSearch = async (query) => {
         const newSearch = await axiosRequestMulti(query);
@@ -27,14 +26,15 @@ const SearchPage = ({ multiSearch }) => {
         setCards(filterResults);
         if (cards.length === 0) {
           setErrorMsg('Not data found');
-        } else {
-          setErrorMsg('Typing your search');
         }
+        // else {
+        //   setErrorMsg('Typing your search');
+        // }
       };
-      console.log(cards);
       getNewSearch(multiSearch);
     } else {
       setCards([]);
+      setErrorMsg('Typing your search');
     }
   }, [multiSearch]);
 
