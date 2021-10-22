@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { useEffect, useContext, useRef } from 'react';
 import './Form.scss';
 import { useHistory } from 'react-router-dom';
 import { IconClose, IconSearch } from '../../../helpers/Icons';
@@ -10,6 +10,13 @@ const Form1 = ({ setMultiSearch }) => {
   const history = useHistory();
   const { isExpandedForm, setIsExpandedForm } = useContext(FormContext);
 
+  useEffect(() => {
+    if (!isExpandedForm) {
+      inputRef.current.value = '';
+      setMultiSearch('');
+    }
+  }, [isExpandedForm, setMultiSearch]);
+
   const handleFormOpen = () => {
     setIsExpandedForm(true);
     inputRef.current.focus();
@@ -19,8 +26,6 @@ const Form1 = ({ setMultiSearch }) => {
   const handleFormClose = () => {
     setIsExpandedForm(false);
     history.push('/');
-    inputRef.current.value = '';
-    setMultiSearch('');
   };
 
   const handleChange = (e) => {
