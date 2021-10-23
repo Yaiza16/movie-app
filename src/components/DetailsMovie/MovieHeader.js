@@ -20,7 +20,9 @@ const MovieHeader = ({ movie, type }) => {
       <div className="movie-header-section movie-header-section--second">
         <div className="movie-genres-container">
           {movie.genres &&
-            movie.genres.map((genre) => <GenreItem text={genre.name} />)}
+            movie.genres.map((genre) => (
+              <GenreItem text={genre.name} key={genre.name} />
+            ))}
         </div>
         {/* <div className="movie-duration-container"> */}
         {type === 'movie' ? (
