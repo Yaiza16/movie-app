@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconGithub, IconLinkedin } from '../helpers/Icons';
+import { IconGithub, IconLinkedin } from 'helpers/Icons';
 import './Footer.scss';
 
 const Footer = () => {

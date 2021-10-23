@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Footer from 'components/Footer';
+import Footer from 'components/Footer/Footer';
 import Header from 'components/Header/Header';
 import { FormProvider } from 'contexts/FormContext';
 import ScrollToTop from 'hooks/ScrollToTop';
