@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import MovieCredits from '../components/DetailsMovie/MovieCredits';
-import MovieHeader from '../components/DetailsMovie/MovieHeader';
-import OverviewMovie from '../components/DetailsMovie/OverviewMovie';
-import MovieTrailer from '../components/DetailsMovie/MovieTrailer';
+import MovieRecommendations from 'components/DetailsMovie/MovieRecommendations';
+import MovieCredits from 'components/DetailsMovie/MovieCredits';
+import MovieHeader from 'components/DetailsMovie/MovieHeader';
+import OverviewMovie from 'components/DetailsMovie/OverviewMovie';
+import MovieTrailer from 'components/DetailsMovie/MovieTrailer';
 
-import PosterMovie from '../components/DetailsMovie/PosterMovie';
-import useMovie from '../hooks/useMovie';
-import useTv from '../hooks/useTv';
+import PosterMovie from 'components/DetailsMovie/PosterMovie';
+import useMovie from 'hooks/useMovie';
+import useTv from 'hooks/useTv';
 
 import './DetailsPage.scss';
-import MovieRecommendations from '../components/DetailsMovie/MovieRecommendations';
 
 const DetailsPage = ({ type }) => {
   const { id } = useParams();
