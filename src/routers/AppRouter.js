@@ -1,15 +1,24 @@
+// import { LoaderProvider } from 'contexts/LoaderContext';
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// import Loader from 'vendors/Loader/Loader';
+// import Loader from 'vendors/Loader/Loader';
 import Footer from '../components/Footer';
 import Header from '../components/Header/Header';
 import { FormProvider } from '../contexts/FormContext';
 import ScrollToTop from '../hooks/ScrollToTop';
 import DetailsPage from '../pages/DetailsPage';
-import MainPage from '../pages/MainPage';
 import MoviesPage from '../pages/MoviesPage';
 import PersonDetailsPage from '../pages/PersonDetailsPage';
 import SearchPage from '../pages/SearchPage';
 import SeriesPage from '../pages/SeriesPage';
+import MainPage from '../pages/MainPage';
+import './AppRouter.scss';
+
+// const MainPage = React.lazy(() => import('pages/MainPage'));
+// const Header = React.lazy(() => import('components/Header/Header'));
+// const MoviesPage = React.lazy(() => import('pages/MoviesPage'));
+// const DetailsPage = React.lazy(() => import('pages/DetailsPage'));
 
 const AppRouter = () => {
   const [multiSearch, setMultiSearch] = useState('');
@@ -38,9 +47,11 @@ const AppRouter = () => {
             <Route exact path="/person/:id">
               <PersonDetailsPage />
             </Route>
-            <Route exact path="/">
+            {/* <Suspense fallback={<Loader />}> */}
+            <Route exact path="/" component={MainPage}>
               <MainPage />
             </Route>
+            {/* </Suspense> */}
           </Switch>
         </FormProvider>
         <Footer />

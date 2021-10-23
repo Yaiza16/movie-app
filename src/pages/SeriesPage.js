@@ -1,5 +1,5 @@
 import React from 'react';
-import Slider from '../components/Slider';
+import Slider from '../components/Slider/Slider';
 import requests from '../helpers/requests';
 
 const SeriesPage = () => {
