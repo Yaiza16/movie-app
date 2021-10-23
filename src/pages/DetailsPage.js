@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import MovieRecommendations from 'components/DetailsMovie/MovieRecommendations';
 import MovieCredits from 'components/DetailsMovie/MovieCredits';
@@ -18,16 +18,30 @@ const DetailsPage = ({ type }) => {
   const { getNewMovie } = useMovie();
   const { getNewTv } = useTv();
 
+  // useEffect(() => {
+  //   const getInformation = async () => {
+  //     let data;
+  //     if (type === 'movie') {
+  //       data = await getNewMovie(id, 'movie');
+  //     } else {
+  //       data = await getNewTv(id, 'tv');
+  //     }
+  //     setMovie(data);
+  //   };
+  //   getInformation();
+  // }, [id]);
+
+  const getInformation = useCallback(async () => {
+    let data;
+    if (type === 'movie') {
+      data = await getNewMovie(id, 'movie');
+    } else {
+      data = await getNewTv(id, 'tv');
+    }
+    setMovie(data);
+  }, [getNewMovie, getNewTv, id, type]);
+
   useEffect(() => {
-    const getInformation = async () => {
-      let data;
-      if (type === 'movie') {
-        data = await getNewMovie(id, 'movie');
-      } else {
-        data = await getNewTv(id, 'tv');
-      }
-      setMovie(data);
-    };
     getInformation();
   }, [id]);
 
@@ -37,7 +51,7 @@ const DetailsPage = ({ type }) => {
         <PosterMovie movie={movie} />
         <div className="info-movie-container">
           <div className="info-movie">
-            <MovieHeader movie={movie} type={type} />
+            <MovieHeader movie={movie} type={type} key={movie.id} />
             <OverviewMovie movie={movie} />
             <MovieCredits movie={movie} type={type} />
             <MovieTrailer movie={movie} />
