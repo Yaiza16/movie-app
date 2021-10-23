@@ -1,4 +1,5 @@
 import React, { useEffect, useContext, useState } from 'react';
+
 import './Card.scss';
 import { SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
@@ -11,18 +12,14 @@ const Card = ({ movie, main, media }) => {
   const { setIsExpandedForm } = useContext(FormContext);
 
   useEffect(() => {
-    // query.set('id', movie.id);
     if (media === 'all') {
       setMediaType(movie.media_type);
-      // } else {
-      //   setMediaType(media);
-      // }
     } else if (movie.media_type) {
       setMediaType(movie.media_type);
     } else {
       setMediaType(media);
     }
-  }, []);
+  }, [media, movie.media_type]);
 
   return (
     <Link
@@ -45,10 +42,6 @@ const Card = ({ movie, main, media }) => {
             </div>
             <img
               className="movie-poster"
-              // src={
-              //   `${baseUrlImage}${movie.backdrop_path} ` ||
-              //   `{process.env.PUBLIC_URL} + /assets/defaultimage.png`
-              // }
               src={
                 movie.backdrop_path
                   ? `${baseUrlImage}${movie.backdrop_path}`
