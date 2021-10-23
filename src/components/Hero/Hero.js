@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import requests from '../../helpers/requests';
 import './Hero.scss';
-import Button from '../Button';
+import Button from '../Button/Button';
 
 const baseUrlImage = 'https://image.tmdb.org/t/p/original';
 

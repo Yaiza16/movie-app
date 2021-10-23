@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconDetails, IconRun } from '../helpers/Icons';
+import { IconDetails, IconRun } from 'helpers/Icons';
 import './Button.scss';
 
 const Button = ({ text }) => {

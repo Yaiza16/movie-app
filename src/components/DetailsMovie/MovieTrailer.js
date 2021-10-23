@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonTV, ButtonTVDisabled } from '../Button';
+import { ButtonTV, ButtonTVDisabled } from '../Button/Button';
 import './MovieTrailer.scss';
 
 const Trailer = ({ movie }) => {
