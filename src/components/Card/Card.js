@@ -2,7 +2,7 @@ import React, { useEffect, useContext, useState } from 'react';
 import './Card.scss';
 import { SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
-import FormContext from '../contexts/FormContext';
+import FormContext from 'contexts/FormContext';
 
 const baseUrlImage = 'https://image.tmdb.org/t/p/original';
 

@@ -4,8 +4,8 @@ import 'swiper/swiper.scss';
 import './Slider.scss';
 import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { IconArrowLeft, IconArrowRight } from '../../helpers/Icons';
-import Card from '../Card';
+import { IconArrowLeft, IconArrowRight } from 'helpers/Icons';
+import Card from 'components/Card/Card';
 
 const Slider = ({ title, fetchUrl, main, media }) => {
   const [movies, setMovies] = useState([]);

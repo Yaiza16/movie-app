@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Card from '../components/Card';
-import { axiosRequestMulti } from '../helpers/axios/axiosRequest';
+import Card from 'components/Card/Card';
+import { axiosRequestMulti } from 'helpers/axios/axiosRequest';
 import './SearchPage.scss';
 
 const SearchPage = ({ multiSearch }) => {
