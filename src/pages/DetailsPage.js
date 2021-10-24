@@ -11,10 +11,12 @@ import useMovie from 'hooks/useMovie';
 import useTv from 'hooks/useTv';
 
 import './DetailsPage.scss';
+import Loader from 'vendors/Loader/Loader';
 
 const DetailsPage = ({ type }) => {
   const { id } = useParams();
   const [movie, setMovie] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const { getNewMovie } = useMovie();
   const { getNewTv } = useTv();
 
@@ -33,12 +35,14 @@ const DetailsPage = ({ type }) => {
 
   const getInformation = useCallback(async () => {
     let data;
+    setIsLoading(true);
     if (type === 'movie') {
       data = await getNewMovie(id, 'movie');
     } else {
       data = await getNewTv(id, 'tv');
     }
     setMovie(data);
+    setIsLoading(false);
   }, [getNewMovie, getNewTv, id, type]);
 
   useEffect(() => {
@@ -47,20 +51,26 @@ const DetailsPage = ({ type }) => {
 
   return (
     <div className="details-page-container">
-      <div className="details-page">
-        <PosterMovie movie={movie} />
-        <div className="info-movie-container">
-          <div className="info-movie">
-            <MovieHeader movie={movie} type={type} key={movie.id} />
-            <OverviewMovie movie={movie} />
-            <MovieCredits movie={movie} type={type} />
-            <MovieTrailer movie={movie} />
-            <MovieRecommendations
-              recommendations={movie.movieRecommendations}
-            />
+      {isLoading ? (
+        <div className="details-page-loader-container">
+          <Loader />
+        </div>
+      ) : (
+        <div className="details-page">
+          <PosterMovie movie={movie} />
+          <div className="info-movie-container">
+            <div className="info-movie">
+              <MovieHeader movie={movie} type={type} key={movie.id} />
+              <OverviewMovie movie={movie} />
+              <MovieCredits movie={movie} type={type} />
+              <MovieTrailer movie={movie} />
+              <MovieRecommendations
+                recommendations={movie.movieRecommendations}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

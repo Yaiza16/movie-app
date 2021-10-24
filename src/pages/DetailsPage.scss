@@ -6,10 +6,19 @@
   color: v.$c-white;
   font-family: v.$f-primary;
   line-height: 1.5rem;
+  min-height: 80vh;
 
   @include m.mq('sm') {
     margin: 6rem 2rem 2rem;
   }
+}
+
+.details-page-loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
 }
 
 .details-page {
