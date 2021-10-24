@@ -33,7 +33,7 @@ const SearchPage = ({ multiSearch }) => {
       setCards([]);
       setErrorMsg('Typing your search');
     }
-  }, [multiSearch, cards]);
+  }, [multiSearch]);
 
   return (
     <div className="search-page-container">
