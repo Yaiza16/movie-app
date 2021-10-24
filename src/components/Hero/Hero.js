@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import requests from '../../helpers/requests';
+import requests from 'helpers/requests';
 import './Hero.scss';
-import Button from '../Button/Button';
+import Button from 'components/Button/Button';
 
 const baseUrlImage = 'https://image.tmdb.org/t/p/original';
 

@@ -1,8 +1,8 @@
-import axiosRequest from '../helpers/axios/axiosRequest';
-import getMovieCast from '../helpers/movieInfo/getMovieCast';
-import getMovieMainData from '../helpers/movieInfo/getMovieMainData';
-import getRecommendations from '../helpers/movieInfo/getRecommendations';
-import getVideo from '../helpers/movieInfo/getVideo';
+import axiosRequest from 'helpers/axios/axiosRequest';
+import getMovieCast from 'helpers/movieInfo/getMovieCast';
+import getMovieMainData from 'helpers/movieInfo/getMovieMainData';
+import getRecommendations from 'helpers/movieInfo/getRecommendations';
+import getVideo from 'helpers/movieInfo/getVideo';
 
 const useMovie = () => {
   const getNewMovie = async (id, type) => {
@@ -13,15 +13,12 @@ const useMovie = () => {
     );
     const video = getVideo(await axiosRequest(id, type, 'videos'));
 
-    console.log(movieRecommendations);
-
     const variable = {
       ...movieMainData,
       ...movieCast,
       movieRecommendations,
       video,
     };
-    console.log(variable);
     return variable;
   };
   return { getNewMovie };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconStar } from '../../helpers/Icons';
+import { IconStar } from 'helpers/Icons';
 import GenreItem from './GenreItem';
 import './MovieHeader.scss';
 

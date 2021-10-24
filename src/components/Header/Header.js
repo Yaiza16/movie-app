@@ -1,16 +1,15 @@
 import React, { useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import IconMovie from '../../helpers/Icons';
+import IconMovie from 'helpers/Icons';
+import FormContext from 'contexts/FormContext';
 import Form from './Form/Form';
 import './Header.scss';
 import NavMobile from './NavMobile/NavMobile';
 import Navigation from './Navigation/Navigation';
-import FormContext from '../../contexts/FormContext';
 
 const Header = ({ setMultiSearch }) => {
   const [header, setHeader] = useState(false);
   const [isNavMobileOpened, setIsNavMobileOpened] = useState(false);
-  // const [expandedForm, setExpandedForm] = useState(false);
   const { isExpandedForm, setIsExpandedForm } = useContext(FormContext);
 
   const headerFixed = () => {

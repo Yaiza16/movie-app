@@ -7,7 +7,6 @@ export default function useNearScreen({ distance = '100px' } = {}) {
   useEffect(() => {
     const onChange = (entries, observer) => {
       const el = entries[0];
-      // s
       if (el.isIntersecting) {
         setShow(true);
         observer.unobserve(fromRef.current);

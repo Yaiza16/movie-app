@@ -1,8 +1,8 @@
 import React, { useEffect, useContext, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
-import { IconClose, IconSearch } from '../../../helpers/Icons';
+import { IconClose, IconSearch } from 'helpers/Icons';
 import './Form.scss';
-import FormContext from '../../../contexts/FormContext';
+import FormContext from 'contexts/FormContext';
 
 const Form = ({ setMultiSearch }) => {
   const inputRef = useRef();

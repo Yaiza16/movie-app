@@ -1,6 +1,6 @@
-import axiosRequest from '../helpers/axios/axiosRequest';
-import { getRecommendationsPerson } from '../helpers/movieInfo/getRecommendations';
-import getPersonMainData from '../helpers/personInfo/getPersonMainData';
+import axiosRequest from 'helpers/axios/axiosRequest';
+import { getRecommendationsPerson } from 'helpers/movieInfo/getRecommendations';
+import getPersonMainData from 'helpers/personInfo/getPersonMainData';
 
 const usePerson = () => {
   const getNewPerson = async (id, type) => {
@@ -10,7 +10,6 @@ const usePerson = () => {
     );
 
     const variable = { ...personMainData, personRecommendations };
-    console.log(variable);
     return variable;
   };
 

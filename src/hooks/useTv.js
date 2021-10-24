@@ -1,9 +1,9 @@
-import axiosRequest from '../helpers/axios/axiosRequest';
+import axiosRequest from 'helpers/axios/axiosRequest';
 
-import getRecommendations from '../helpers/movieInfo/getRecommendations';
-import getTvCast from '../helpers/movieInfo/getTvCast';
-import getTvMainData from '../helpers/movieInfo/getTvMainData';
-import getVideo from '../helpers/movieInfo/getVideo';
+import getRecommendations from 'helpers/movieInfo/getRecommendations';
+import getTvCast from 'helpers/movieInfo/getTvCast';
+import getTvMainData from 'helpers/movieInfo/getTvMainData';
+import getVideo from 'helpers/movieInfo/getVideo';
 
 const useTv = () => {
   const getNewTv = async (id, type) => {
@@ -20,7 +20,6 @@ const useTv = () => {
       video,
       movieRecommendations,
     };
-    console.log(variable);
 
     return variable;
   };

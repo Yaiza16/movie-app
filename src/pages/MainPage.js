@@ -1,12 +1,9 @@
 import React from 'react';
 import Slider from 'components/Slider/Slider';
-// import Hero from '../components/Hero/Hero';
 import LazyHero from 'components/Hero/LazyHero';
 
 import requests from '../helpers/requests';
 import './MainPage.scss';
-
-// const Hero = React.lazy(() => import('components/Hero/Hero'));
 
 const MainPage = () => {
   return (

@@ -1,6 +1,5 @@
 import React from 'react';
 import PersonalDataItem from './PersonalDataItem';
-
 import './PersonalData.scss';
 
 const PersonalData = ({ person }) => {

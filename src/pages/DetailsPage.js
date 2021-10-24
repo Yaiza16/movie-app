@@ -20,19 +20,6 @@ const DetailsPage = ({ type }) => {
   const { getNewMovie } = useMovie();
   const { getNewTv } = useTv();
 
-  // useEffect(() => {
-  //   const getInformation = async () => {
-  //     let data;
-  //     if (type === 'movie') {
-  //       data = await getNewMovie(id, 'movie');
-  //     } else {
-  //       data = await getNewTv(id, 'tv');
-  //     }
-  //     setMovie(data);
-  //   };
-  //   getInformation();
-  // }, [id]);
-
   const getInformation = useCallback(async () => {
     let data;
     setIsLoading(true);

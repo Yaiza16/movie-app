@@ -1,5 +1,5 @@
 import React from 'react';
-import CastSection from './CastSection/CastSection';
+import CastSection from 'components/DetailsMovie/CastSection/CastSection';
 
 const MovieCredits = ({ movie, type }) => {
   return (

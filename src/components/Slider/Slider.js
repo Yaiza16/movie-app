@@ -31,7 +31,7 @@ const SliderLazy = ({ title, fetchUrl, main, media }) => {
           slidesPerGroup={1}
           speed={600}
           breakpoints={{
-            // when window width is >= 320px
+            // when window width is >= 500px
             500: {
               slidesPerGroup: 2,
             },

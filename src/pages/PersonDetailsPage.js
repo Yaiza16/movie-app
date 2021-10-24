@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import PersonalData from '../components/DetailsPerson/PersonalData';
-import PersonRecommendations from '../components/DetailsPerson/PersonRecommendations';
-import ProfilePoster from '../components/DetailsPerson/ProfilePoster';
-import usePerson from '../hooks/usePerson';
+import PersonalData from 'components/DetailsPerson/PersonalData';
+import PersonRecommendations from 'components/DetailsPerson/PersonRecommendations';
+import ProfilePoster from 'components/DetailsPerson/ProfilePoster';
+import usePerson from 'hooks/usePerson';
 
 import './PersonPage.scss';
 
