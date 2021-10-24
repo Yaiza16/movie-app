@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { IconArrowLeft, IconArrowRight } from 'helpers/Icons';
 import Card from 'components/Card/Card';
 
-const Slider = ({ title, fetchUrl, main, media }) => {
+const SliderLazy = ({ title, fetchUrl, main, media }) => {
   const [movies, setMovies] = useState([]);
 
   SwiperCore.use([Navigation]);
@@ -79,4 +79,4 @@ const Slider = ({ title, fetchUrl, main, media }) => {
   );
 };
 
-export default Slider;
+export default SliderLazy;
