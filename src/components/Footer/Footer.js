@@ -10,10 +10,18 @@ const Footer = () => {
           © 2021 Yaiza Vallejo Caro · All right reserved
         </p>
         <div className="footer-social-container">
-          <a href="https://github.com/Yaiza16">
+          <a
+            href="https://github.com/Yaiza16"
+            target="_blank"
+            rel="external noreferrer"
+          >
             <IconGithub />
           </a>
-          <a href="https://www.linkedin.com/in/yaizavc/">
+          <a
+            href="https://www.linkedin.com/in/yaizavc/"
+            target="_blank"
+            rel="external noreferrer"
+          >
             <IconLinkedin />
           </a>
         </div>
