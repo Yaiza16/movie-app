@@ -29,9 +29,10 @@ const AppRouter = () => {
             <Route path="/movies">
               <MoviesPage />
             </Route>
-            <Route path="/series">
-              <SeriesPage />
-            </Route>
+            {/* <Route path="/series">
+                <SeriesPage />
+              </Route> */}
+            <Route path="/series" component={SeriesPage} />
             <Route exact path="/category/movie/:id">
               <DetailsPage type="movie" />
             </Route>
