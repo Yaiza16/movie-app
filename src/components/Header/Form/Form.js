@@ -48,7 +48,7 @@ const Form = ({ setMultiSearch }) => {
           type="text"
           id="search"
           required
-          placeholder="Search..."
+          placeholder="Typing at least 3 characters..."
           autoComplete="off"
           onChange={handleChange}
         />
