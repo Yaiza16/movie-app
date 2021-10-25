@@ -1,11 +1,15 @@
 <div  align="center">
-<h1>Movie and serie app (Tuumex)
+
+<h1>Tuumex (movie-app)
+
 <h2>
 <a  href="https://movie-app-yv.vercel.app/">Live site</a>
+</div><br>
+<div  align="center">
 
 ![Preview image](./design/preview.gif)
 
-  </div>
+</div>
 
 ## Challenge's description
 
