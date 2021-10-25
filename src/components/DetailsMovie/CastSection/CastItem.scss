@@ -7,8 +7,23 @@
 .person-name {
   color: v.$c-white;
   transition: all 0.1s;
+  // text-decoration: underline;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    left: 1px;
+    right: 1px;
+    height: 1px;
+    background-color: v.$c-gray;
+    transition: all 0.2s ease;
+  }
 
   &:hover {
-    text-decoration: underline;
+    &::after {
+      background-color: v.$c-white;
+    }
   }
 }
