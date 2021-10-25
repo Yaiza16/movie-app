@@ -6,29 +6,41 @@ import ProfilePoster from 'components/DetailsPerson/ProfilePoster';
 import usePerson from 'hooks/usePerson';
 
 import './PersonPage.scss';
+import Loader from 'vendors/Loader/Loader';
 
 const PersonDetailsPage = () => {
   const { id } = useParams();
   const [person, setPerson] = useState([]);
   const { getNewPerson } = usePerson();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const getInformation = async () => {
+      setIsLoading(true);
       const data = await getNewPerson(id, 'person');
       setPerson(data);
+      setIsLoading(false);
     };
     getInformation();
   }, [id]);
 
   return (
     <div className="details-page-container">
-      <div className="details-page details-page--person">
-        <div className="details-page-main">
-          <ProfilePoster person={person} />
-          <PersonalData person={person} />
+      {isLoading ? (
+        <div className="details-page-loader-container">
+          <Loader />
         </div>
-        <PersonRecommendations recommendations={person.personRecommendations} />
-      </div>
+      ) : (
+        <div className="details-page details-page--person">
+          <div className="details-page-main">
+            <ProfilePoster person={person} />
+            <PersonalData person={person} />
+          </div>
+          <PersonRecommendations
+            recommendations={person.personRecommendations}
+          />
+        </div>
+      )}
     </div>
   );
 };
