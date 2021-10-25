@@ -1,4 +1,4 @@
-@use '../../../styles/variables' as v;
+@use 'styles/variables' as v;
 
 .cast-title {
   display: inline;
@@ -7,4 +7,5 @@
 
 .cast-item {
   display: inline;
+  font-family: v.$f-secundary;
 }
