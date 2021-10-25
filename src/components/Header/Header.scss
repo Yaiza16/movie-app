@@ -30,6 +30,12 @@
     margin-right: 2rem;
   }
 
+  &--disabled-mobile {
+    @include m.mq('sm') {
+      display: none;
+    }
+  }
+
   &__name-site {
     color: v.$c-white;
   }

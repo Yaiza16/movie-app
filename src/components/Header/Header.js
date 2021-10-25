@@ -28,7 +28,7 @@ const Header = ({ setMultiSearch }) => {
         className="nav-link-logo"
         onClick={() => setIsExpandedForm(false)}
       >
-        <div className="logo">
+        <div className={isExpandedForm ? 'logo logo--disabled-mobile' : 'logo'}>
           <IconMovie />
           <h1 className="logo__name-site">Tuumex</h1>
         </div>

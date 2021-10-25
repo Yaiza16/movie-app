@@ -2,8 +2,8 @@
 
 <h1>Tuumex (movie-app)
 
-<h2>
-<a  href="https://movie-app-yv.vercel.app/">Live site</a>
+<a href="https://movie-app-yv.vercel.app/">Live site</a>
+
 </div><br>
 <div  align="center">
 
