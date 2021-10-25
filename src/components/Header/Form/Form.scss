@@ -46,6 +46,10 @@
   color: v.$c-white;
   height: 100%;
 
+  &:focus {
+    height: 100%;
+  }
+
   &--opened {
     width: 100%;
     padding-left: 2.5rem;
