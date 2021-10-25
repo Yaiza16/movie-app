@@ -11,11 +11,17 @@ const PersonalData = ({ person }) => {
         {person.deathday !== null ? (
           <PersonalDataItem title="Date of birth: " info={person.deathday} />
         ) : null}
-        <PersonalDataItem
-          title="Place of birth: "
-          info={person.place_of_birth}
-        />
-        <PersonalDataItem title="Biography: " info={person.biography} />
+        {person?.place_of_birth?.length === 0 ||
+        person?.place_of_birth === null ? null : (
+          <PersonalDataItem
+            title="Place of birth: "
+            info={person.place_of_birth}
+          />
+        )}
+        {person?.biography?.length === 0 ||
+        person?.biography === null ? null : (
+          <PersonalDataItem title="Biography: " info={person.biography} />
+        )}
       </div>
     </div>
   );
