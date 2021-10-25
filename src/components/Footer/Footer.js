@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer-site">
       <div className="footer-container">
         <p className="footer-copyright">
-          © 2021 Yaiza Vallejo Caro · All right reserved
+          © 2021 Yaiza Vallejo Caro · All rights reserved
         </p>
         <div className="footer-social-container">
           <a
