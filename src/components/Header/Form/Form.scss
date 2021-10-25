@@ -52,6 +52,10 @@
   color: v.$c-white;
   min-height: 100%;
 
+  @include m.mq('lg') {
+    font-size: 1rem;
+  }
+
   &:focus {
     min-height: 100%;
   }
